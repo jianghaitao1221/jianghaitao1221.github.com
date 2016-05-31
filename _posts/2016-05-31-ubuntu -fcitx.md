@@ -24,11 +24,15 @@ sudo apt-get install fcitx fcitx-config-gtk
 #搜狗需要到官网下载deb
 
 ```
+
 ### 修改系统输入法
+
 
 "System Settings"-->"Language Support"-->Keyboard input method sysytem-->fcitx
 
+
 ### 添加输入法
+
 
 "Search your computy"-->"Fcitx Configuration"-->+
 

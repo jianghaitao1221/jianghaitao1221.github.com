@@ -15,20 +15,20 @@ tags:
 
 ### 安装shadowsocks
 
-[shadowsocks](#ubuntu_shadowsocks.md)
+[shadowsocks](/2016/05/31/ubuntu-shadowsocks/)
 
 ### 安装qq
 
-[qq](#ubuntu_qq.md)
+[qq](/2016/05/31/ubuntu-qq/)
 
 ### 安装rtx
 
-[rtx](#ubuntu_rtx.md)
+[rtx](/2016/05/31/ubuntu-rtx/)
 
 ### 安装中文输入法
 
 
-[输入法](#ubuntu_fcitx.md)
+[输入法](#/2016/05/31/ubuntu-fcitx/)
 
 ### 安装jdk
 
