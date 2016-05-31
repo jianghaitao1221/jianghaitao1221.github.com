@@ -1,0 +1,141 @@
+---
+layout:     post
+title:      "ubuntu 16.04工作环境搭建"
+subtitle:   " \"QQ,RTX,JDK,JAVA,GO,GIT,IDEA,SMARTGIT,输入法，为知笔记等\""
+date:       2016-05-31 00:00:00
+author:     "Jht"
+header-img: "img/home-bg-computer.jpg"
+catalog: true
+tags:
+    - ubuntu
+    - linux
+---
+
+##  ubuntu16.04安装工作环境
+
+### 安装shadowsocks
+
+[shadowsocks](#ubuntu_shadowsocks.md)
+
+### 安装qq
+
+[qq](#ubuntu_qq.md)
+
+### 安装rtx
+
+[rtx](#ubuntu_rtx.md)
+
+### 安装中文输入法
+
+
+[输入法](#ubuntu_fcitx.md)
+
+### 安装jdk
+
+```bash
+sudo add-apt-repository ppa:webupd8team/java  
+sudo apt-get update  
+sudo apt-get install oracle-java8-installer
+
+```
+
+### 安装为知笔记
+
+```bash
+sudo add-apt-repository ppa:wiznote-team
+sudo apt-get update
+sudo apt-get install wiznote
+```
+
+### 安装idea社区版
+
+[下载链接](https://www.jetbrains.com/idea/)
+
+解压，运行`bin`下`idea.sh`
+
+###  安装git
+
+```bash
+sudo apt-get install git
+```
+
+###  安装smartgit
+
+```bash
+sudo add-apt-repository ppa:eugenesan/ppa
+sudo apt-get update
+sudo apt-get install smartgit
+```
+选择非商用
+
+###  安装chrome
+
+```bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+sudo dpkg -i g google-chrome-stable_current_amd64.deb
+# 如果有错误执行
+sudo apt-get -f install
+# 在执行
+sudo dpkg -i g google-chrome-stable_current_amd64.deb
+```
+
+### 安装vscode
+
+```bash
+sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+sudo apt-get update
+sudo apt-get install ubuntu-make
+#安装Ubuntu Make完后，接着使用下列命令安装Visual Studio Code：
+umake web visual-studio-code
+```
+或
+
+[下载地址](https://code.visualstudio.com/)
+
+```bash
+sudo dpkg -i vscode-amd64.deb
+```
+
+
+### 安装bearychat
+
+[下载地址](https://bearychat.com/)
+
+```bash
+sudo dpkg -i BearyChat-linux-x64.zip
+```
+
+### 安装wps
+
+[下载地址](http://community.wps.cn/download/)
+
+```bash
+sudo dpkg -i wps-office_10.1.0.5444~a20_amd64.deb 
+```
+
+
+### 安装filezilla
+
+```bash
+sudo apt-get install filezilla
+```
+
+### 安装secureCRT
+
+[下载地址](https://www.vandyke.com/download/securecrt/download.html)
+
+```bash
+sudo dpkg -i scrt-sfx-8.0.1-1082.ubuntu14-64.x86_64.deb
+```
+
+#### 破解
+
+```bash
+wget http://download.boll.me/securecrt_linux_crack.pl
+sudo perl securecrt_linux_crack.pl /usr/bin/SecureCRT #终端上会有key
+#运行SecureCRT，破解哪个运行哪个
+/usr/bin/SecureCRT
+```
+
+[破解教程](http://www.cnblogs.com/wangkongming/p/3533240.html)
