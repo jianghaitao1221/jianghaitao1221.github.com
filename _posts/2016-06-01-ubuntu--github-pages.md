@@ -9,6 +9,8 @@ catalog: true
 tags:
     - ubuntu
     - linux
+    - jekyll
+    - github page
 ---
 
 ##  ubuntu16.04使用Github Pages + Jekyll搭建博客
