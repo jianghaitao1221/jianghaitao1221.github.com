@@ -8,7 +8,7 @@ header-img: "img/home-bg-computer.jpg"
 catalog: true
 tags:
     - jekyll
-    - github page
+    - github pages
     - ubuntu
     - linux
 ---
