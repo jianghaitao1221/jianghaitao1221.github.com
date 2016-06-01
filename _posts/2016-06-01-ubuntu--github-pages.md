@@ -7,10 +7,10 @@ author:     "Jht"
 header-img: "img/home-bg-computer.jpg"
 catalog: true
 tags:
-    - ubuntu
-    - linux
     - jekyll
     - github page
+    - ubuntu
+    - linux
 ---
 
 ##  ubuntu16.04使用Github Pages + Jekyll搭建博客
@@ -80,9 +80,11 @@ sudo gem install bundler
 
 你可以在网上找一些好看模板，来替换的你`github pages`
 
-[jekyllthemes.org](http://jekyllthemes.org/)
-[mademistakes ](https://mademistakes.com/work/jekyll-themes/)
-[Hux Blog](https://github.com/Huxpro/huxpro.github.io)(我使用的是这个)
+- [jekyllthemes.org](http://jekyllthemes.org/)
+
+- [mademistakes ](https://mademistakes.com/work/jekyll-themes/)
+
+- [Hux Blog](https://github.com/Huxpro/huxpro.github.io)(我使用的是这个)
 
 下载完成后替换到`repository`目录下
 
