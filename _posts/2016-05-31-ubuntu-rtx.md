@@ -26,6 +26,7 @@ wget  http://kegel.com/wine/winetricks
 ### 第三步 下载 winetricks
 
 #### msxml3 需要手动安装
+
 ```bash
 winetricks msxml3 
 ```
