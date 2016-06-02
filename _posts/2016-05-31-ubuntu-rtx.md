@@ -52,6 +52,12 @@ winetricks  gdiplus riched20 riched30 ie6 vcrun6 vcrun2005sp1
 
 ### 第五步 解决乱码和不能输入中文的问题
 
+#### 解决名字前面两个字是`方框`的问题
+
+点开“应用程序”->“Wine”->“Configure Wine”->“函数库”->在“新增函数库顶替”中，输入“oleaut32.dll”，再点击“添加”->“应用”->“确定”。
+
+#### 解决不能输入中文和消息内容乱码的问题
+
 ```bash
 gedit Desktop/Tencent\ RTX.desktop #在env 后面加上"XMODIFIERS=@im=fcitx  QT_IM_MODULE=fcitx  GTK_IM_MODULE=fcitx LANG='zh_CN.UTF-8' LC_ALL='zh_CN.UTF-8'"
 ```
@@ -66,7 +72,13 @@ Path=/home/xxx/.wine/dosdevices/z:/home/xxxx/User/rtx
 Icon=9838_RTX.0
 ```
 
-###  第六步 解决自动离线的问题
+###  第六步 解决不能显示图片的问题
+
+
+“应用程序”->“wine”->“configure wine”->“函数库”->在“新增函数库顶替”中，输入“riched20.dll和riched30.dll”，再点击“添加”->“应用”->“确定”。
+
+
+###  第七步 解决自动离线的问题
 
 
 
