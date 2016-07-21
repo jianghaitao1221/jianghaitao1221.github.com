@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "ubuntu的kidle_inject占用CPU过高"
-subtitle:   " \"换主板后产生的问题""
+subtitle:   " \"换主板后产生的问题\""
 date:       2016-06-16 00:00:00
 author:     "Jht"
 header-img: "img/home-bg-computer.jpg"

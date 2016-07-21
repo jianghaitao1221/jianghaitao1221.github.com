@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "windows的zip压缩"
-subtitle:   " \"命令行zip压缩的几种方法""
+subtitle:   " \"命令行zip压缩的几种方法\""
 date:       2016-06-16 00:00:00
 author:     "Jht"
 header-img: "img/post-bg-zip.jpg"
@@ -10,10 +10,12 @@ tags:
     - zip
 ---
 
+
+
 ##  winrar
 
 ```bat
-winrar a -afzip c:\test.zip c:\test.csv #不是rar.exe
+winrar.exe a -afzip c:\test.zip c:\test.csv #不是rar.exe
 #会弹出压缩界面
 ```
 
