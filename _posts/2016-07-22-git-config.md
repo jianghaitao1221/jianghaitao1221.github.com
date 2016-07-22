@@ -33,3 +33,14 @@ git config –-local -l
 #列出全局级的配置文件
 git config –-global -l
 ```
+
+
+## system
+
+系统级别，文件位置`git安装目录\mingw32\etc\gitconfig`
+
+```bat
+#列出系统级的配置文件
+git config –-global -l
+```
+
