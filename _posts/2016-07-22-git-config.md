@@ -2,7 +2,7 @@
 layout:     post
 title:      "git config"
 subtitle:   " \"git的配置文件的介绍\""
-date:       2016-06-16 00:00:00
+date:       2016-07-22 00:00:00
 author:     "Jht"
 header-img: "img/post-bg-git.jpg"
 catalog: true

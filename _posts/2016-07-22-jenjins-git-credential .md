@@ -2,7 +2,7 @@
 layout:     post
 title:      "jenkins使用git凭证存储功能"
 subtitle:   " \"不同操作系统对应的方法\""
-date:       2016-06-16 00:00:00
+date:       2016-07-22 00:00:00
 author:     "Jht"
 header-img: "img/post-bg-git.jpg"
 catalog: true
