@@ -12,7 +12,7 @@ tags:
 
 ##  下载地址
 
-[pac manager](#http://sites.google.com/site/davidtv/)
+[pac manager](http://sites.google.com/site/davidtv/)
 
 下载`.deb`
 

@@ -14,7 +14,7 @@ tags:
 
 ### 主页
 
-[主页](#https://konsole.kde.org/)
+[主页](https://konsole.kde.org/)
 
 ### 特点
 
