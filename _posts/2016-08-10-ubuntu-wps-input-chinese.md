@@ -14,7 +14,7 @@ tags:
 
 搜狗
 
-## excel
+## word
 
 解决`word`不能输入中文
 
@@ -27,9 +27,9 @@ export QT_IM_MODULE="fcitx"
 
 ```
 
-## 表格
+## excel
 
-解决表格不能输入文字
+解决`excel`不能输入文字
 
 ```
 sudo vi /usr/bin/et
@@ -40,6 +40,8 @@ export QT_IM_MODULE="fcitx"
 ```
 
 ## ppt
+
+解决`ppt`不能输入文字
 
 ```
 sudo vi /usr/bin/wpp
