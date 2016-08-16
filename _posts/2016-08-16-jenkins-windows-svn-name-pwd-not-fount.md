@@ -4,7 +4,7 @@ title:      "jenkins在windows slave上执行svn命令报错"
 subtitle:   " \"svn: E170001: Can't get username or password\""
 date:       2016-08-16 00:00:00
 author:     "Jht"
-header-img: "img/post-bg-jenkins.png"
+header-img: "img/home-bg-computer.jpg"
 catalog: true
 tags:
     - jenkins

@@ -4,7 +4,7 @@ title:      "svn命令行add和delete"
 subtitle:   " \"设置所有要被设置的文件\""
 date:       2016-08-16 00:00:00
 author:     "Jht"
-header-img: "img/post-bg-svn.png"
+header-img: "img/home-bg-computer.jpg"
 catalog: true
 tags:
     - svn
