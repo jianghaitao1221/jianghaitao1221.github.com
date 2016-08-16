@@ -30,5 +30,9 @@ svn: E170001: Can't get username or password
 
 修改`jenkins`服务的权限
 
+- 找到`jenkins`服务
+- 右键，选择`属性`
+- 点击`登陆`
+
 ![img](/img/in-post/jenkins-windows-svn-name-pwd-not-fount/fix.png)
 
