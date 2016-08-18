@@ -4,7 +4,7 @@ title:      "用markdown画时序图"
 subtitle:   " \"能画简单的时序图\""
 date:       2016-08-16 00:00:00
 author:     "Jht"
-header-img: "img/home-bg-md.jpg"
+header-img: "img/post-bg-md.jpg"
 catalog: true
 tags:
     - markdown
