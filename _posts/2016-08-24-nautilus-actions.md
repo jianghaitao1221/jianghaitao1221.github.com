@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "ubuntu自定义鼠标右键菜单"
-subtitle:   " \"在终端打开的几种方式\""
+subtitle:   "\"在终端打开的几种方式\""
 date:       2016-08-24 00:00:00
 author:     "Jht"
 header-img: "img/home-bg-computer.jpg"
