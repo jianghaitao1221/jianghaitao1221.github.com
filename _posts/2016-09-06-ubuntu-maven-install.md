@@ -23,4 +23,6 @@ sudo apt-get install maven3
 
 ```bash
 dpkg -L mvn #显示安装目录
+#配置环境变量
+export M2_HOME=/usr/share/maven
 ```
