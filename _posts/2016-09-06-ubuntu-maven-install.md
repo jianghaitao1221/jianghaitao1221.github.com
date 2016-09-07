@@ -7,7 +7,9 @@ author:     "Jht"
 header-img: "img/home-bg-computer.jpg"
 catalog: true
 tags:
+    - maven
     - ubuntu
+   
 ---
 
 ## 安装
