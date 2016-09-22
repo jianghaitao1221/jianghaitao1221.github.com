@@ -75,6 +75,7 @@ rest_cherrypy:
 
 ```bash
 systemctl restart salt-api.service
+systemctl restart salt-master.service
 ```
 
 ## 登陆
