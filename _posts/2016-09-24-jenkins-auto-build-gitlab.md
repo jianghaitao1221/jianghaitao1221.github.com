@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "jenkins使用gitlab自动化部署"
-subtitle:   "\"Build when a change is pushed to GitLab.""
+subtitle:   "\"Build when a change is pushed to GitLab.\""
 date:       2016-09-24 00:00:00
 author:     "Jht"
 header-img: "img/home-bg-computer.jpg"
