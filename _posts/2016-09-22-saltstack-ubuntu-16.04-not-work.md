@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "salt-api在16.04报错"
+title:      "salt-api版本2016.3.3在16.04报错"
 subtitle:   "\"python-cherry3.5.0版本不兼容\""
 date:       2016-09-22 00:00:00
 author:     "Jht"
