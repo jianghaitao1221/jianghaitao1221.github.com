@@ -29,6 +29,8 @@ echo "sudopsw" | sudo -S echo salt:salt_pass | sudo chpasswd
 
 ## 生成证书
 
+`如果有证书，直接看`[配置](#配置)
+
 ### 安装依赖
 
 ```bash
