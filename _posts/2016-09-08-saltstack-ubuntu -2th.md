@@ -53,9 +53,10 @@ sudo salt-key -L
 ```
 
 结果：
+
 ```bash
 Accepted Keys:
-test1
+NODE1
 Denied Keys:
 Unaccepted Keys:
 Rejected Keys:
