@@ -138,7 +138,7 @@ Key Generation Options:
                         the minion to verify the masters public-key
                         cryptographically. This requires a new signing-key-
                         pair which can be auto-created with the --auto-create
-                        parameter.
+                        parameter.看下方示例。
     --priv=PRIV         The private-key file to create a signature with.
     --signature-path=SIGNATURE_PATH
                         The path where the signature file should be written.
