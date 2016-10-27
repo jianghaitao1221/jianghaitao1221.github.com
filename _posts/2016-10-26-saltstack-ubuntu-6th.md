@@ -70,3 +70,8 @@ base:
   'webserv* and G@os:Debian or E@web-dc1-srv.*':
     – match: compound
     – webserver
+
+
+## 官方文档
+
+[官方文档](https://docs.saltstack.com/en/latest/topics/targeting/nodegroups.html)

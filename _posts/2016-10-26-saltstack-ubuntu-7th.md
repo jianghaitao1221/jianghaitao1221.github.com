@@ -180,3 +180,8 @@ file_roots:
     - /srv/salt/prod/states
 
 ```
+
+## 官方文档
+
+[官方文档之salt](https://docs.saltstack.com/en/latest/ref/cli/salt.html)
+[官方文档之top.sls](https://docs.saltstack.com/en/latest/ref/states/top.html)
