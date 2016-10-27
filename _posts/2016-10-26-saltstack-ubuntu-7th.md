@@ -119,7 +119,7 @@ base:
     - dbserver
 ```
 
-参考[saltstack之group](https://jianghaitao1221.github.io/2016/10/26/saltstack-ubuntu-6th/#示例)
+参考[saltstack之group](https://jianghaitao1221.github.io/2016/10/26/saltstack-ubuntu-6th/#section)
 
 
 #### 4.Pillar匹配
@@ -161,7 +161,7 @@ base:
   - webserver
 ```
 
-参考[saltstack之group](https://jianghaitao1221.github.io/2016/10/26/saltstack-ubuntu-6th/#混合匹配)
+参考[saltstack之group](https://jianghaitao1221.github.io/2016/10/26/saltstack-ubuntu-6th/#section-1)
 
 
 ### top.sls多环境配置
