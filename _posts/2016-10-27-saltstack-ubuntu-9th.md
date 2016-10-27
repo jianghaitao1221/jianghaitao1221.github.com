@@ -82,7 +82,7 @@ tomdroid-src-0.7.3.tar.gz:
 
 `当不指定source_hash时，当源文件变了，如果本地缓存了之前的版本，那么新文件是不会被更新的`
 
-[跳过hash验证](#skip_verify)
+[跳过hash验证](#skipverify)
 
 
 ### user
