@@ -52,14 +52,14 @@ test2:
 
 | 字母        | 匹配类型           | 例子  |分隔符 （：） |
 | ------------- |:-------------:| -----:|-----:|
-|G      |Grains glob（Grains键值对） | G@os:Ubuntu |Yes |
-|E      | PCRE Minion ID（Minion ID正则）     |   E@web\d+\.(dev\|qa\|prod)\.loc |No |
-|P      |Grains PCRE（Grains正则）      |   E@web\d+\.(dev\|qa\|prod)\.loc |Yes |
-|L      | List of minions（Minion ID列表） | L@minion1.example.com,minion3.domain.com or bl*.domain.com |No |
-|I      | Pillar glob（Pillar键值对）     |   I@pdata:foobar	 |Yes |
-|J      | Pillar PCRE（Pillar正则）      |   J@pdata:^(foo\|bar)$	 |Yes |
-|S      | Subnet/IP address（子网/IP） | S@192.168.1.0/24 or S@192.168.1.100	 |No |
-|R      | Range cluster（客户端范围）    |   R@%foo.bar	|No |
+|G      |Grains glob</br>（Grains键值对） | G@os:Ubuntu |Yes |
+|E      | PCRE Minion ID</br>（Minion ID正则）     |   E@web\d+\.(dev\|qa\|prod)\.loc |No |
+|P      |Grains PCRE</br>（Grains正则）      |   E@web\d+\.(dev\|qa\|prod)\.loc |Yes |
+|L      | List of minions</br>（Minion ID列表） | L@minion1.example.com,minion3.domain.com or bl*.domain.com |No |
+|I      | Pillar glob</br>（Pillar键值对）     |   I@pdata:foobar	 |Yes |
+|J      | Pillar PCRE</br>（Pillar正则）      |   J@pdata:^(foo\|bar)$	 |Yes |
+|S      | Subnet/IP address</br>（子网/IP） | S@192.168.1.0/24 or S@192.168.1.100	 |No |
+|R      | Range cluster</br>（客户端范围）    |   R@%foo.bar	|No |
 
 还可以使用 and, or, 和 not。
 
