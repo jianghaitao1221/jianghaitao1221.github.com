@@ -2,13 +2,14 @@
 layout:     post
 title:      "saltstack配置"
 subtitle:   "\"saltstack学习二\""
-date:       2016-09-08 00:00:00
+date:       2016-09-08 02:00:00
 author:     "Jht"
 header-img: "img/home-bg-computer.jpg"
 catalog: true
 tags:
     - saltstack
     - ubuntu
+    - devops
 ---
 
 

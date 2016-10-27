@@ -9,6 +9,7 @@ catalog: true
 tags:
     - saltstack
     - ubuntu
+    - devops
 ---
 
 
