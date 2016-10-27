@@ -2,7 +2,7 @@
 layout:     post
 title:      "saltstack远程命令和top.sls介绍"
 subtitle:   "\"saltstack学习七\""
-date:       2016-10-26 01:00:00
+date:       2016-10-26 04:00:00
 author:     "Jht"
 header-img: "img/home-bg-computer.jpg"
 catalog: true
