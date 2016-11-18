@@ -13,6 +13,8 @@ tags:
 
 ## ubuntu16.04安装shadowsocks
 
+`commond`和`GUI`二选一。
+
 ### 安装 shadowsocks by commond
 
 ##### 安装
@@ -41,7 +43,7 @@ sudo pip install shadowsocks
 
 ```bash
 nohup sslocal -c ~/ss_conf.json > ~/ss.log 2>&1 &
-
+```
 
 ###  安装 shadowsocks by GUI
 
@@ -88,7 +90,7 @@ sudo apt-get install shadowsocks-qt5
 - `Default`选择`Direct`
 - `Rule list rules`选择刚刚新建的`profile`
 - `Rule List Config`选择`AutoProxy`
-- `Rule List URL`填写`https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt`
+- `Rule List URL`填写`https://github.com/gfwlist/gfwlist/blob/master/gfwlist.txt`
 - 点击`Download Profile Now`
 - 点击`Apply changes`
 

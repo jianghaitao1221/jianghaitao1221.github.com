@@ -74,3 +74,11 @@ prime-select query
 ### 重启
 
 问题解决。
+
+### 双系统
+
+如果是`windows`和`Ubuntu`双系统。
+
+- 进入`BIOS`
+- 找到`secure boot`相关配置
+- change `windows uefi` to `other os`

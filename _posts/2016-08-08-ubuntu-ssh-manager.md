@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "ubuntu下的ssh图形化管理工具"
+title:      "ubuntu下的ssh图形化管理工具pac-manager"
 subtitle:   " \"类似secureCrt和XShell\""
 date:       2016-08-08 00:00:00
 author:     "Jht"
