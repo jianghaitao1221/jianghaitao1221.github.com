@@ -81,4 +81,5 @@ prime-select query
 
 - 进入`BIOS`
 - 找到`secure boot`相关配置
+- 找到操作系统类型
 - change `windows uefi` to `other os`

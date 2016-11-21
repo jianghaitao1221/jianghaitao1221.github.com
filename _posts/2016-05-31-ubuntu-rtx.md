@@ -13,6 +13,14 @@ tags:
 
 ##  ubuntu16.04下完美安装RTX
 
+安装方法：
+- wine+rtx
+- playonlinux+rtx
+
+`个人推荐第二种`
+
+### 1.wine+rtx
+
 ### 第一步 安装wine
 
 ```bash
@@ -83,6 +91,69 @@ Icon=9838_RTX.0
 
 
 在登录RTX后在“个人设置”里的“回复设置中”把“自动状态转换”的勾去掉。
+
+## playonlinux+rtx
+
+我测试的时候wine到了1.9.x版本，但是我没装成功。
+
+### 安装playonlinux
+
+```bash
+wget -q "http://deb.playonlinux.com/public.gpg" -O- | sudo apt-key add -  
+sudo wget http://deb.playonlinux.com/playonlinux_trusty.list -O /etc/apt/sources.list.d/playonlinux.list  
+sudo apt-get update  
+sudo apt-get install playonlinux
+
+#运行
+playonlinux
+```
+### 配置playonlinux
+
+#### 第一步 配置wine
+
+- 点`Tools`
+- 选择`Maqnage Wine versions`
+- 选择`amd64`
+- 选择相对应`wine`的版本（本文选择的是`1.7.26`）
+
+#### 第二步 创建虚拟盘
+
+- 点击`Configure`
+- 选择`new`
+- 选择`32`位的虚拟盘
+- 选择默认的wine
+- 输入虚拟盘的名字
+
+#### 第三步 安装rtx需要的想要组件
+
+- msxml3 
+- msxml6 
+- ie8 
+- vcrun6 
+- vcrun2005 
+- riched20 
+- riched30
+
+#### 第四步 下载rtx
+
+版本`2013`
+
+#### 安装
+
+- 点击`install a program`
+- 选择左下角的`install a non-listed program`
+- 点击`next`
+- 选择`edit or update an existing application`并`next`
+- 选择一个虚拟盘，并`next`（查看所有的选择`show virtual drives`）
+- 选择`next`
+- 选择`32bits windows Installation`并`next`
+- 选择`rtxclient2013formal.exe`进行安装
+
+忽略错误`RTXShIMwnu.dll`注册失败的错误。
+
+
+
+
 
 
 
