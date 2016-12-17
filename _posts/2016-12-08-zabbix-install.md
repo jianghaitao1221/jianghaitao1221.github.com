@@ -63,8 +63,8 @@ sudo apt-get update
 
 ```bash
 wget http://repo.zabbix.com/zabbix/3.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_3.0-1+xenial_all.deb
-sudo dokg -i zabbix-release_3.0-1+xenial_all.deb
-sudo apt-get upadate
+sudo dpkg -i zabbix-release_3.0-1+xenial_all.deb
+sudo apt-get update
 ```
 
 ### 安装服务端
