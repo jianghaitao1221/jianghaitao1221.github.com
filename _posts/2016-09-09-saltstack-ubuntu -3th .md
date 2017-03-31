@@ -4,7 +4,7 @@ title:      "salt-api配置"
 subtitle:   "\"saltstack学习三\""
 date:       2016-09-12 00:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/saltstack-bg.jpg"
 catalog: true
 tags:
     - saltstack

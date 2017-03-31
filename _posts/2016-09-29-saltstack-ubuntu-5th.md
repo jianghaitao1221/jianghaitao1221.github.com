@@ -4,7 +4,7 @@ title:      "salt-key命令介绍"
 subtitle:   "\"saltstack学习五\""
 date:       2016-09-29 00:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/saltstack-bg.jpg"
 catalog: true
 tags:
     - saltstack

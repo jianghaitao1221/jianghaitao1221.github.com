@@ -4,7 +4,7 @@ title:      "saltstack错误:Minion received a SIGTERM. Exiting"
 subtitle:   "\"Some salt keys both in accepted keys and denied keys.\""
 date:       2016-10-27 04:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/saltstack-bg.jpg"
 catalog: true
 tags:
     - saltstack

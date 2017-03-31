@@ -4,7 +4,7 @@ title:      "saltstack之masterless"
 subtitle:   "\"saltstack学习十\""
 date:       2016-11-25 04:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/saltstack-bg.jpg"
 catalog: true
 tags:
     - saltstack

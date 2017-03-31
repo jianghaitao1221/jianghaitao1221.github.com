@@ -4,7 +4,7 @@ title:      "saltstack之file.managed"
 subtitle:   "\"saltstack学习九\""
 date:       2016-10-27 04:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/saltstack-bg.jpg"
 catalog: true
 tags:
     - saltstack
