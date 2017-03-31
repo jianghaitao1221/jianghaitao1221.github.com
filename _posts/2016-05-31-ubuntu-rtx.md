@@ -4,7 +4,7 @@ title:      "ubuntu16.04下完美安装RTX"
 subtitle:   " \"解决不能输入中文，乱码等问题\""
 date:       2016-05-31 00:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/ubuntu-bg.jpg"
 catalog: true
 tags:
     - ubuntu

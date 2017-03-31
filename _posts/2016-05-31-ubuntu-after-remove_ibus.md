@@ -4,7 +4,7 @@ title:      "ubuntu 16.04恢复卸载ibus后带来的一系列问题"
 subtitle:   " \"恢复Appearance、Text Entry、Launcher 、 Top Panel等\""
 date:       2016-05-31 00:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/ubuntu-bg.jpg"
 catalog: true
 tags:
     - ubuntu

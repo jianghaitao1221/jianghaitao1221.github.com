@@ -4,7 +4,7 @@ title:      "ubuntu下的画图工具yEd"
 subtitle:   " \"类似visio，没时序图，md来补\""
 date:       2016-08-09 00:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/ubuntu-bg.jpg"
 catalog: true
 tags:
     - ubuntu

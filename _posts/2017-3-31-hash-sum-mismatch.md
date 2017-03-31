@@ -2,9 +2,9 @@
 layout:     post
 title:      "Hash Sum mismatch"
 subtitle:   "\"apt-get update失败\""
-date:       2017-2-23 08:00:00
+date:       2017-3-31 08:00:00
 author:     "Jht"
-header-img: "img//home-bg-computer.jpg"
+header-img: "img/ubuntu-bg.jpg"
 catalog: true
 tags:
     - ubuntu

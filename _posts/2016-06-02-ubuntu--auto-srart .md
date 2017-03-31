@@ -4,7 +4,7 @@ title:      "ubuntu16.04通过GUI设置开机启动应用"
 subtitle:   " \"像windows一样设置启动项\""
 date:       2016-06-02 00:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/ubuntu-bg.jpg"
 catalog: true
 tags:
     - ubuntu

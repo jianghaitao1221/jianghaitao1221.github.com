@@ -4,7 +4,7 @@ title:      "ubuntu下的ssh图形化管理工具pac-manager"
 subtitle:   " \"类似secureCrt和XShell\""
 date:       2016-08-08 00:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/ubuntu-bg.jpg"
 catalog: true
 tags:
     - ubuntu

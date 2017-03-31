@@ -4,7 +4,7 @@ title:      "ubuntu 16.04工作环境搭建"
 subtitle:   " \"QQ,RTX,JDK,JAVA,GO,GIT,IDEA,SMARTGIT,输入法，为知笔记等\""
 date:       2016-05-31 00:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/ubuntu-bg.jpg"
 catalog: true
 tags:
     - ubuntu

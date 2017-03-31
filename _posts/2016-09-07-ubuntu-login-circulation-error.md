@@ -4,7 +4,7 @@ title:      "ubuntu循环登陆问题"
 subtitle:   "\"分辨率变低了\""
 date:       2016-09-07 00:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/ubuntu-bg.jpg"
 catalog: true
 tags:
     - ubuntu

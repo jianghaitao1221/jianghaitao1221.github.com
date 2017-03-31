@@ -4,7 +4,7 @@ title:      "ubuntu下的ssh仿真终端"
 subtitle:   " \"比自带的好用\""
 date:       2016-08-08 00:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/ubuntu-bg.jpg"
 catalog: true
 tags:
     - ubuntu

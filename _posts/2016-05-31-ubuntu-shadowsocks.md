@@ -4,7 +4,7 @@ title:      "ubuntu16.04安装shadowsocks"
 subtitle:   " \"两种安装方式，chrome和终端配置代理\""
 date:       2016-05-31 00:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/ubuntu-bg.jpg"
 catalog: true
 tags:
     - ubuntu

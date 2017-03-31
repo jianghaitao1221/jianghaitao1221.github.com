@@ -4,7 +4,7 @@ title:      "ubuntu的compiz占用CPU过高"
 subtitle:   " \"Xorg和chrome的CPU也过高\""
 date:       2016-06-16 00:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/ubuntu-bg.jpg"
 catalog: true
 tags:
     - ubuntu

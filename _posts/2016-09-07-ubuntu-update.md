@@ -4,7 +4,7 @@ title:      "ubuntu升级系统"
 subtitle:   "\"16.04升级到16.04.1\""
 date:       2016-09-07 00:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/ubuntu-bg.jpg"
 catalog: true
 tags:
     - ubuntu
