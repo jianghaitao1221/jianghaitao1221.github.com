@@ -4,7 +4,7 @@ title:      "saltstack安装"
 subtitle:   "\"saltstack学习一\""
 date:       2016-09-08 01:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/saltstack-bg.jpg"
 catalog: true
 tags:
     - saltstack
