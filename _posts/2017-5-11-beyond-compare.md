@@ -3,7 +3,7 @@
 layout:     post
 title:      "Beyond Compare绿色版"
 subtitle:   "\"制作方法（4.1.19）\""
-date:       2017-5-31 08:00:00
+date:       2017-5-11 08:00:00
 author:     "Jht"
 header-img: "img/util-bg.png"
 catalog: true
