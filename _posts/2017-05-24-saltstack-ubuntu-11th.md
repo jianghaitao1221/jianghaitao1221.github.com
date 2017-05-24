@@ -82,7 +82,7 @@ sudo salt-ssh -i 'node1' --priv xxx.pem test.ping
 
 ### 配置sls
 
-```yml
+```bash
 salt-minion-repo:
   pkgrepo.managed:
     - humanname: SaltStack Repo
