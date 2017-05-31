@@ -97,11 +97,11 @@ name:{A,C}
 `注意必须使用大写`
 
 ```bash
-`AND or &&`
-`OR or ||`
-`NOT or !`
-`+` #搜索结果中必须包含此项,作用于AND的差不多，但是支持单独使用
-`-` #不能含有此项,效果类似NOT
+AND or &&
+OR or ||
+NOT or !
++ #搜索结果中必须包含此项,作用于AND的差不多，但是支持单独使用
+- #不能含有此项,效果类似NOT
 # +hello -world test：结果中必须存在hello，不能有world，test可有可无
 ```
 #### 分组
