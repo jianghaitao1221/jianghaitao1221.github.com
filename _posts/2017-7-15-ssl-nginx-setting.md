@@ -54,6 +54,6 @@ server {
 
  ## 参考资料
 
- [加强Nginx的SSL安全](http://www.oschina.net/translate/strong_ssl_security_on_nginx)
- [原文地址](https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html)
- [Cipherli.st](https://cipherli.st/)
+ - [加强Nginx的SSL安全](http://www.oschina.net/translate/strong_ssl_security_on_nginx)
+ - [原文地址](https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html)
+ - [Cipherli.st](https://cipherli.st/)
