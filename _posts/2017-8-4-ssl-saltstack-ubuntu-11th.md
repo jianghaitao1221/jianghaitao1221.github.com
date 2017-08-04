@@ -14,7 +14,7 @@ tags:
 
 ## job id
 
-在salt 中，每次执行一次salt命令就会产生一个Job，每个job有一个唯一id：
+在salt 中，每次执行一次salt命令就会产生一个Job，每个job有一个唯一id
 
 ### 格式
 
