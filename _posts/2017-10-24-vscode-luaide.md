@@ -50,7 +50,7 @@ luaIde 是基于vscode开发的一款用于lua语言开发者使用的插件.
 
 - 文件-->首选项-->设置
 - `用户设置`下`"extensions.autoUpdate": false`
-- 或者修改 `C:\Users\username\.vscode\extensions\kangping.luaide-0.3.7\package.json`的`name`和`displayName`
+- 或者修改 `C:\Users\username\.vscode\extensions\kangping.luaide-0.3.7\package.json`的`version`为`100.3.7`
 - `工作区域`下` "luaide.scriptRoots": ["C:/Users/username/work/xxxxx/luadir"]` 可以配置多个目录
 
 #### 收费版
