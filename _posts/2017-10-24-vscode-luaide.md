@@ -5,7 +5,7 @@ title:      "LuaIde"
 subtitle:   "比较好用的lua插件"
 date:       2017-10-24 10:00:00
 author:     "Jht"
-header-img: "img/saltstack-bg.jpg"
+header-img: "img/lua-bg.jpg"
 catalog: true
 tags:
     - lua
