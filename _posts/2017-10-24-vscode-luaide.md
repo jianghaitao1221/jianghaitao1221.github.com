@@ -33,7 +33,7 @@ luaIde 是基于vscode开发的一款用于lua语言开发者使用的插件.
 
 #### 免费版
 
-- [本地下载](attach/kangping.luaide-0.3.7.zip)
+- [本地下载](http://jianghaitao1221.github.io/attach/kangping.luaide-0.3.7.zip)
 - [github](https://github.com/k0204/LuaIde/)
 
 将插件放到 `C:\Users\username\.vscode\extensions`
