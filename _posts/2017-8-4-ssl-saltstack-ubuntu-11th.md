@@ -2,7 +2,7 @@
 
 layout:     post
 title:      "saltstack之job managemen"
-subtitle:   "saltstack学习十一"
+subtitle:   "saltstack学习十二"
 date:       2017-7-19 10:00:00
 author:     "Jht"
 header-img: "img/saltstack-bg.jpg"
