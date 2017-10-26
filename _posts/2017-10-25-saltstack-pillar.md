@@ -7,8 +7,7 @@ date:       2017-10-25 11:00:00
 author:     "Jht"
 header-img: "img/saltstack-bg.jpg"
 catalog: true
-tags:
-    - saltstack
+
 ---
 
 ## Pillar是什么？
