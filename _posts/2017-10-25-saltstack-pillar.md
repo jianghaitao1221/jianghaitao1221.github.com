@@ -2,7 +2,7 @@
 
 layout:     post
 title:      "saltstack之pillar"
-subtitle:   ""saltstack学习十三\""
+subtitle:   "\"saltstack学习十三\""
 date:       2017-10-25 11:00:00
 author:     "Jht"
 header-img: "img/saltstack-bg.jpg"
