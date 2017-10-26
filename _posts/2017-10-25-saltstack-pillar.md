@@ -2,8 +2,8 @@
 
 layout:     post
 title:      "saltstack之pillar"
-subtitle:   "saltstack学习之十三"
-date:       2017-10-26 11:00:00
+subtitle:   "saltstack学习之十三"
+date:       2017-10-25 10:00:00
 author:     "Jht"
 header-img: "img/saltstack-bg.jpg"
 catalog: true
@@ -67,13 +67,13 @@ base:
     - data
     - packages
 #/srv/pillar/packages.sls: 
-{% if grains['os'] == 'RedHat' %}
+\{\% if grains['os'] == 'RedHat'\%\}
 apache: httpd
 git: git
-{% elif grains['os'] == 'Debian' %}
+\{\% elif grains['os'] == 'Debian' \%\}
 apache: apache2
 git: git-core
-{% endif %}
+\{\% endif \%\}
 #/srv/pillar/data/init.sls:
 role: DB_master
 #这段代码表示，base环境中所有的minion都具有packages和data中定义的数据。Pillar采用与file server相同的文件映射方式，在本例中，packages映射到文件/srv/pillar/packages.sls，data映射到/srv/pillar/data/init.sls。注意key与value要用冒号加空格分隔，没有空格的话将解析失败。
@@ -108,7 +108,7 @@ sudo salt '*' saltutil.refresh_pillar
 #Python API
 pillar['flow']['maxconn']
 #在state file文件中
-{{ salt['pillar.get']('version') }}
+\{\{ salt['pillar.get']('version') \}\}
 #命令行
 salt -I 'role:DB*' test.ping
 #在 pillar file文件中
@@ -124,7 +124,7 @@ salt -I 'role:DB*' test.ping
  #编辑pillar 
  vi /srv/pillar/ip.sls
  #文件内容
- ip: {{ grains['ipv4'][1] }}
+ ip: \{\{ grains['ipv4'][1] \}\}
  #执行命令 
  salt '*' pillar.item ip
  
@@ -140,13 +140,13 @@ salt -I 'role:DB*' test.ping
 #### 为不同的系统设置不同的参数
 
 ```bash
-{% if grains['os'] == 'RedHat' %}
+\{\% if grains['os'] == 'RedHat' \%\}
 apache: httpd
 git: git
-{% elif grains['os'] == 'Debian' %}
+\{\% elif grains['os'] == 'Debian' \%\}
 apache: apache2
 git: git-core
-{% endif %}
+\{\% endif \%\}
 ```
 
 ### 资料
