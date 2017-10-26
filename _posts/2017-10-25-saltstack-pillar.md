@@ -2,12 +2,14 @@
 
 layout:     post
 title:      "saltstack之pillar"
-subtitle:   "saltstack学习十三"
-date:       2017-10-25 11:00:00
+subtitle:   "saltstack学习之十三"
+date:       2017-10-26 11:00:00
 author:     "Jht"
 header-img: "img/saltstack-bg.jpg"
 catalog: true
-
+tags:
+    - saltstack
+    - devops
 ---
 
 ## Pillar是什么？
