@@ -54,11 +54,11 @@ base:
 | Letter | 匹配类型            | 例子                                                      |	Alt Delimiter?|
 | ------ |:--------------:     | --------------------------------------------------------:|---------------:|
 | G      | Grains 单个匹配     | G@os:Ubuntu                                               |Yes
-| E      | Minion id正则匹配   | E@web\d+\.(dev|qa|prod)\.loc                              |No
-| P      | Grains 正则匹配     | P@os:(RedHat|Fedora|CentOS)	                             |Yes
+| E      | Minion id正则匹配   | E@web\d+\.(dev\|qa\|prod)\.loc                           |No
+| P      | Grains 正则匹配     | P@os:(RedHat\|Fedora\|CentOS)	                             |Yes
 | L      | minions列表         | L@minion1.example.com,minion3.domain.com or bl*.domain.com|No
 | I      | Pillar 单个匹配     | I@pdata:foobar                                            |Yes
-| J      | Pillar 正则匹配     | J@pdata:^(foo|bar)$                                       |Yes
+| J      | Pillar 正则匹配     | J@pdata:^(foo\|bar)$                                       |Yes
 | S      | 子网/IP地址匹配      | S@192.168.1.0/24 or S@192.168.1.100                        |No
 | R      | Range cluster匹配   | R@%foo.bar                                                |No
 
