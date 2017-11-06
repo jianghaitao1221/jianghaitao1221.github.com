@@ -103,8 +103,8 @@ grains:
 #master
 
 nodegroups:
-  group1: 'P@role:(webserver|memcache)' #Grains 正则匹配
-  group2: 'G@role:webserver'            #Grains 单个匹配
+  group1: 'P@roles:(webserver|memcache)' #Grains 正则匹配
+  group2: 'G@roles:webserver'            #Grains 单个匹配
 ```
 
 #### minion id匹配
