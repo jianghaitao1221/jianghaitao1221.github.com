@@ -103,8 +103,8 @@ grains:
 #master
 
 nodegroups:
-  group1: 'L@foo.domain.com,bar.domain.com,baz.domain.com or bl*.domain.com'  #minions列表匹配
-  group2: 'E@web\d+\.(dev|qa|prod)\.loc'                                      #Minion id正则匹配
+  group1: 'P@role:(webserver|memcache)' #Grains 正则匹配
+  group2: 'G@role:webserver'            #Grains 单个匹配
 ```
 
 #### minion id匹配
@@ -114,8 +114,9 @@ nodegroups:
 ```bash
 #master
 nodegroups:
-  group1: 'P@role:(webserver|memcache)' #Grains 正则匹配
-  group2: 'G@role:webserver'            #Grains 单个匹配
+  group1: 'L@foo.domain.com,bar.domain.com,baz.domain.com or bl*.domain.com'  #minions列表匹配
+  group2: 'E@web\d+\.(dev|qa|prod)\.loc'                                      #Minion id正则匹配
+
 ```
 
 ##### 设置minion id
