@@ -81,6 +81,56 @@ beacons:
 
 2017.7.2
 
+### 自动化删除
 
+#### reactor system
+
+其实Reactor就是匹配event的tag，如果发现有和我定义相匹配的tag，那么我就可以触发相应的操作。
+
+`event 会在另外的章节讲解`
+
+```bash
+#开启presence事件，在master配置文件中设置
+
+#/etc/salt/master.d/presence_events.conf
+presence_events: True
+
+#查看事件
+sudo salt-run state.event pretty=True
+
+#salt/presence/change事件的样子
+salt/presence/change	{
+    "_stamp": "2017-11-08T07:54:43.260001", 
+    "lost": [
+        "test-salt-minion-1"
+    ], 
+    "new": []
+}
+
+#/etc/salt/master.d/reactor.conf
+reactor:
+  - 'salt/presence/change': #监听的时间标签
+    - salt://_reactor/delete-key-stopped-minion.sls
+
+#delete-key-stopped-minion.sls
+{% for minion_id in data['lost'] %}
+remove_unused_keys_{{ minion_id }}:
+  wheel.key.delete:
+    - args:
+      - match: {{ minion_id }}
+{% endfor %}
+
+```
+
+#### 注意
+
+reactor system 只能保障 presence_events 开启后的 minion ，配合 salt-run manage.down removekeys=True。
+
+## 官方文档
+
+[REACTOR SYSTEM](https://docs.saltstack.com/en/latest/topics/reactor/index.html)
+
+
+[SALT MASTER EVENTS](https://docs.saltstack.com/en/latest/topics/event/master_events.html)
 
 
