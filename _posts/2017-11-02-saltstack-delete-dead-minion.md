@@ -113,12 +113,12 @@ reactor:
     - salt://_reactor/delete-key-stopped-minion.sls
 
 #delete-key-stopped-minion.sls
-{% for minion_id in data['lost'] %}
-remove_unused_keys_{{ minion_id }}:
+\{\% for minion_id in data['lost'] \%\}
+remove_unused_keys_\{\{ minion_id \}\}:
   wheel.key.delete:
     - args:
-      - match: {{ minion_id }}
-{% endfor %}
+      - match: \{\{ minion_id \}\}
+\{\% endfor \%\}
 
 ```
 
