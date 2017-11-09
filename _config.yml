@@ -49,8 +49,10 @@ kramdown:
 # Disqus settings
 #disqus_username: _your_disqus_short_name_
 
-# Netease setttings
-netease_comment: false                   # set to false if you want to use Comment without Sharing
+# Duoshuo settings
+duoshuo_username: jhtblog
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
 
 
@@ -61,9 +63,7 @@ ba_track_id: 3371f46944327ff11674e45ccb65475b
 ga_track_id: 'UA-78610019-1'           
 ga_domain: auto
 
-# Featured Tags
-featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
