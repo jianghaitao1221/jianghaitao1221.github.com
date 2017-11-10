@@ -190,9 +190,12 @@ reactor:
 #/srv/reactor/revert.sls
 revert-file:
   local.state.apply:
-    - tgt: {{ data['data']['id'] }}
+    - tgt: \{\{ data['data']['id'] \}\}
+    - tgt_type: nodegroup
     - arg:
       - maintain_important_file
+    - kwarg:
+      - saltenv: central
 
 #/srv/salt/maintain_important_file.sls
 important_file:
