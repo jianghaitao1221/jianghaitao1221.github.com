@@ -85,15 +85,15 @@ ssh Server2
 
 ### 第一步
 
-![Alt text](img/in-post/ssh-agent/ssh-agent-1.png)
+![Alt text](http://jianghaitao1221.github.io/img/in-post/ssh-agent/ssh-agent-1.png)
 
 ### 第二步
 
-![Alt text](img/in-post/ssh-agent/ssh-agent-2.png)
+![Alt text](http://jianghaitao1221.github.io/img/in-post/ssh-agent/ssh-agent-2.png)
 
 ### 第三步
 
-![Alt text](img/in-post/ssh-agent/ssh-agent-3.png)
+![Alt text](http://jianghaitao1221.github.io/img/in-post/ssh-agent/ssh-agent-3.png)
 
 ## 参考文档
 
