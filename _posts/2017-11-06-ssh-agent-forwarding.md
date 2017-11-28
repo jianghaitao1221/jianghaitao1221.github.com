@@ -60,7 +60,33 @@ ssh -A user@your Server2 ip
 Host Server2
   HostName your Server2 ip
   ForwardAgent yes
+
 ```
+
+### Systemd to spawn ssh-agent and adding your keys
+
+ ```bash
+ #创建service文件
+ #~/.config/systemd/user/ssh-agent.service:
+#第一步
+[Unit]
+Description=SSH key agent
+
+[Service]
+Type=forking
+Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
+ExecStart=/usr/bin/ssh-agent -a $SSH_AUTH_SOCK
+
+[Install]
+WantedBy=default.target
+#第二步
+echo 'export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"' >> ~/.bash_profile
+#第三步
+systemctl --user enable ssh-agent
+systemctl --user start ssh-agent
+#SSH 7.2
+echo 'AddKeysToAgent  yes' >> ~/.ssh/config
+ ```
 
 ## 不配置ssh agent的方法
 
