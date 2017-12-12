@@ -19,11 +19,11 @@ Jinja2 是一个现代的，设计者友好的，仿照 Django 模板的 Python 
 并且提供了可选的沙箱模板执行环境保证安全:
 
 ```bash
-<title>{% block title %}{% endblock %}</title>
+<title>\{% block title %\}\{% endblock %\}</title>
 <ul>
-{% for user in users %}
-  <li><a href="{{ user.url }}">{{ user.username }}</a></li>
-{% endfor %}
+\{% for user in users %\}
+  <li><a href="{{ user.url }}">\{\{ user.username \}\}</a></li>
+\{% endfor %\}
 </ul>
 ```
 ### 特性
@@ -44,25 +44,25 @@ SaltStack 是使用 YAML 语言来将 SLS 文件解释成它自己可以识别�
 ### 条件
 
 ```bash
-{% if grains['os_family'] == 'RedHat' %}
+\{% if grains['os_family'] == 'RedHat' %\}
 apache: httpd
 git: git
-{% elif grains['os_family'] == 'Debian' %}
+\{% elif grains['os_family'] == 'Debian' %\}
 apache: apache2
 git: git-core
-{% endif %}
+\{% endif %\}
 ```
 
 ### 循环
 
 ```bash
-{% for DIR in ['/dir1','/dir2','/dir3'] %}
-{{ DIR }}:
+\{% for DIR in ['/dir1','/dir2','/dir3'] %\}
+\{\{ DIR \}\}:
   file.directory:
     - user: root
     - group: root
     - mode: 774
-{% endfor %}
+\{% endfor %\}
 ```
 
 ### 执行模块
@@ -80,7 +80,7 @@ apache-service:
     - mode: 644
     - template: jinja                       #增加这行表示开启模板
     - defaults:                             #下面设定变量的值
-      HOST: {{ grains['fqdn_ip4'][0] }}     #[fqdn_ip4]代表的是IP，由于grains查询输出的是列表，会有多个值，需要加上[0]代表取第一个值
+      HOST: \{\{ grains['fqdn_ip4'][0] \}\}     #[fqdn_ip4]代表的是IP，由于grains查询输出的是列表，会有多个值，需要加上[0]代表取第一个值
       PORT: 8181                            #监听的端口
 
   service.running:
