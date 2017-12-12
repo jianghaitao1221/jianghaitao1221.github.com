@@ -191,7 +191,6 @@ reactor:
 revert-file:
   local.state.apply:
     - tgt: \{\{ data['data']['id'] \}\}
-    - tgt_type: nodegroup
     - arg:
       - maintain_important_file
     - kwarg:
@@ -204,6 +203,32 @@ important_file:
     - contents: |
         important_config: True
 ```
+
+##### tgt_type
+
+```bash
+#例1
+revert-file:
+  local.state.apply:
+    - tgt: group1
+    - tgt_type: nodegroup
+    - arg:
+      - maintain_important_file
+    - kwarg:
+      - saltenv: central
+#例2
+revert-file:
+  local.state.apply:
+    - tgt: 'os:ubuntu'
+    - tgt_type: grain
+    - arg:
+      - maintain_important_file
+    - kwarg:
+      - saltenv: central
+```
+
+[TARGETING MINIONS](https://docs.saltstack.com/en/latest/topics/targeting/index.html#targeting)
+
 
 ### 三种REACTION类型
 
