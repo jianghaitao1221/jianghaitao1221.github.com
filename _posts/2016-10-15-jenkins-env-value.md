@@ -4,7 +4,7 @@ title:      "jenkins定义环境变量"
 subtitle:   "\"环境变量在build step间传递，环境变量在job间传递\""
 date:       2016-10-17 01:00:00
 author:     "Jht"
-header-img: "img/home-bg-computer.jpg"
+header-img: "img/post-bg-jenkins.png"
 catalog: true
 tags:
     - jenkins
