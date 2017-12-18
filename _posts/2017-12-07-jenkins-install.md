@@ -48,6 +48,14 @@ sudo apt-get install jenkins
 
 - [下载页面](https://jenkins.io/download/)
 
+## 升级
+
+- 下载jenkins最新版本的war包
+  - [更新包镜像]http://mirrors.shuosc.org/jenkins/war/
+- 停止jenkins服务，备份jenkins原来的war包
+- 把最新的war包上传到jenkins服务器上并启动jenkins
+- war包目录/usr/share/jenkins
+
 ## Jenkins 关键字
 
 - Agent
@@ -125,6 +133,9 @@ sudo apt-get install jenkins
 - Workspace
   - Noede文件系统上的一次性目录， 可以由Pipeline或项目完成工作。在Build或 Pipeline运行完成后，工作区通常会保留原样，除非在Jenkins Master上已经设置了特定的Workspace清理策略。
 
+## 参考资料
+
+[官方文档](https://wiki.jenkins.io/display/JENKINS/Home)
 
 
 
