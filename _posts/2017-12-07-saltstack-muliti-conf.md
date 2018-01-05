@@ -24,7 +24,7 @@ file_roots:
   base:
     - /srv/conf/common/salt # common里只有sls
     - /srv/conf/intranet/salt
-#sls优先级：common的优先级高，当common和intranet中都有相同的sls，会以common中为准
+#sls优先级：common的优先级高,会先搜索common，在搜索intranet，当common有了，会以common中为准
 #===========================================================
 pillar_roots:
   base:
@@ -32,9 +32,9 @@ pillar_roots:
     - /srv/conf/intranet/pillar #top.sls 在各个环境的配置文件中
 #pillar优先级：intranet会覆盖common
 ```
+## 官方文档
 
-
-
+[FILE SERVER CONFIGURATION](https://docs.saltstack.com/en/latest/ref/file_server/file_roots.html)
 
 
 
