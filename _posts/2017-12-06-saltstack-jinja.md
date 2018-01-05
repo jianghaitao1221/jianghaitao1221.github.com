@@ -92,6 +92,39 @@ apache-service:
       -file: apache-service
 ```
 
+### import
+
+```bash
+\{\% from 'config.sls' import map \%\}
+#=====================================================
+\{\% set nn = 'this is nn' \%\}
+\{\% import 'params.sls' as params with context \%\}
+
+# with context的意思是config可以引用上下文中的变量，nn可以在params.sls被使用
+#cc的值是this is nn
+#=====================================================
+\{\% from 'config.sls' import map with context \%\} 
+#=====================================================
+#config.sls
+\{\% set map = salt['grains.filter_by']({
+    'Debian': {
+        'pkgs': ['bind9', 'bind9utils', 'dnssec-tools'],
+        'service': 'bind9',
+        'config_source_dir': 'bind/files/debian'
+    },
+    'RedHat': {
+        'pkgs': ['bind'],
+        'service': 'named',
+        'config_source_dir': 'bind/files/redhat'
+    })
+\%\}
+#=====================================================
+#params.sls
+\{\% set aa = 'aa'\%\}
+\{\% set bb = 'aa'\%\}
+\{\% set cc = nn \%\}
+```
+
 ## 参考文档
 
 [Jinja 文档](http://docs.jinkan.org/docs/jinja2/index.html)
