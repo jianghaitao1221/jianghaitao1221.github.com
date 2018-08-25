@@ -153,6 +153,42 @@ controls {
 };
 ```
 
+### zone
+
+```bash
+zone "example.com" {
+  type master;
+  file "/etc/bind/db.example.com";
+};
+
+sudo vi /etc/bind/db.example.com
+#内容如下：
+$TTL    604800
+@       IN      SOA     localhost. root.localhost. (
+1              ; Serial  #  每次变更区域内容时数值变化，以通知slave同步数据。
+604800         ; Refresh #  更新频率 slave主动向master更新
+86400          ; Retry   #  如果 slave 在进行更新失败后，要隔多久再进行重试
+2419200        ; Expire  #  是记录逾期时间：当 slave 一直未能成功与 master 取得联系，
+                         #  那到这里就放弃 retry，同时这里的资料也将标识为过期
+604800 )       ; Negative Cache TTL # TTL 值，如果您在前面没有用“$TTL”来定义，就会以此值为准。 
+;
+@       IN      NS      localhost.
+@       IN      A       127.0.0.1
+```
+
+具体解析 ，参见[DNS的记录类型](http://jianghaitao1221.github.io/2018/07/14/dns/#DNS的记录类型)
+
+#### TTL
+
+TTL(Time-To-Live/生存时间)，是一个域名解析记录在DNS服务 中的存留时间。各地的DNS服务器在接受到解析请求后，会向域名指定的NS服务器发出解析请求从而获得解析记录；在获得这个记录之后，记录会在DNS服务器中保存一段时间，在这段时间内若再次接到解析请求，DNS服务器将直接返回刚才获得的记录。
+
+`具体的值参考可以参考同类网站`
+
+```bash
+dig +trace +nocmd +noall +answer +ttlid aaaa www.baidu.com #查询ttl值
+dig +noauthority +noquestion +nostats www.baidu.com        #查询剩余的ttl值
+```
+
 ## rndc-远程控制
 
 通过这个工具可以在本地或者远程了解当前服务器的运行状况，也可以对服务器进行关闭、重载、刷新缓存、增加删除zone等操作。
@@ -282,6 +318,11 @@ sudo service bind9 reload
 
 ```
 
+## 调试
+
+```bash
+strace named -g -f -u bind -t /etc/bind
+```
 
 ## 相关资料
 
