@@ -86,12 +86,12 @@ server 11.111.4.100 { keys hunk-tech-key; };
  参见[rndc配置](http://jianghaitao1221.github.io/2018/07/15/bind-install-and-conf/#rndc-远程控制)
 
  
- ## GloboDNS
+## GloboDNS
 
  GloboDNS的原理就是把zone的数据记录到mysql，在数据库中配置好以后，导出成bind的zone file文件，通过rsync同步到对应的master和slave上，通过rndc进行reload,内部把bind配置变成git仓库，每次变化都git commit，一旦失败回退上一个文件版本。
  也就是说你的所有配置都要通过web的前段进行配置。
 
- ### 安装
+### 安装
 
 **一定要先阅读：**[GloboDNS setup](https://github.com/globocom/GloboDNS/blob/master/doc/setup.md)
 
