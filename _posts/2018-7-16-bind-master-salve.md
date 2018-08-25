@@ -83,6 +83,8 @@ server 11.111.4.100 { keys hunk-tech-key; };
 
  `master和slave需配置dnssec-key，配置方法同rndc-key一样`
 
+ 参见[rndc配置](http://jianghaitao1221.github.io/2018/07/15/bind-install-and-conf/#rndc-远程控制)
+
  ## GloboDNS
 
  GloboDNS的原理就是把zone的数据记录到mysql，在数据库中配置好以后，导出成bind的zone file文件，通过rsync同步到对应的master和slave上，通过rndc进行reload
@@ -238,7 +240,7 @@ development: &devconf
 
 文件位置见上一节指定
 
-参见[配置rndc]()
+参见[rndc配置](http://jianghaitao1221.github.io/2018/07/15/bind-install-and-conf/#rndc-远程控制)
 
 #### 11.初始化数据库
 
