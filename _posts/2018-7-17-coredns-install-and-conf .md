@@ -1,7 +1,7 @@
 ---
 
 layout:     post
-title:      "搭建DNS服务(四)"
+title:      "搭建DNS服务(五)"
 subtitle:   "coredns的安装和配置"
 date:       2018-7-17 09:00:00
 author:     "Jht"

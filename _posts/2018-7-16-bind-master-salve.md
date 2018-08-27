@@ -1,7 +1,7 @@
 ---
 
 layout:     post
-title:      "搭建DNS服务(三)"
+title:      "搭建DNS服务(四)"
 subtitle:   "bind的master/salve设置"
 date:       2018-7-16 09:00:00
 author:     "Jht"
@@ -267,8 +267,9 @@ bundle exec unicorn_rails
 
 ### DLZ
 
-Dynamically-Loadable Zones 是个第三方的插件。在Bind9的源码包中有所有的第三方插件。`DLZ的性能较差`。
+Dynamically-Loadable Zones 是个第三方的插件。在Bind9的源码包中有所有的第三方插件。`
 
+第三方插件目录`contrib`。DLZ的性能较差`。
 
 具体安装参见[Bind-Web](https://github.com/1032231418/Bind-Web)
 

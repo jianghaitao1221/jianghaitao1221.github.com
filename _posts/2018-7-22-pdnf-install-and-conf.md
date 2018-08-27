@@ -1,7 +1,7 @@
 ---
 
 layout:     post
-title:      "搭建DNS服务(五)"
+title:      "搭建DNS服务(六)"
 subtitle:   "powerdns的安装和配置"
 date:       2018-7-22 09:00:00
 author:     "Jht"

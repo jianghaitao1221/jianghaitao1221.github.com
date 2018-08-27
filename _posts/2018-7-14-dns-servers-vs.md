@@ -1,7 +1,7 @@
 ---
 
 layout:     post
-title:      "搭建DNS服务(一)"
+title:      "搭建DNS服务(二)"
 subtitle:   "DNS Server选型与分析"
 date:       2018-7-14 19:00:00
 author:     "Jht"
@@ -62,6 +62,8 @@ Bind9可以作为权威与递归DNS。
 测试环境4核CPU，4G内存为70K。
 
 加了DLZ就更慢一些，会下降10倍甚至更多。
+
+bind安装目录下`contrib/queryperf`是性能测试模块，需编译安装。
 
 ### 监控
 

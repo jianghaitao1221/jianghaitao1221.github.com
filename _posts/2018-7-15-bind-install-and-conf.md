@@ -1,7 +1,7 @@
 ---
 
 layout:     post
-title:      "搭建DNS服务(二)"
+title:      "搭建DNS服务(三)"
 subtitle:   "在ubuntu16.04上bind的搭建与配置"
 date:       2018-7-15 09:00:00
 author:     "Jht"
