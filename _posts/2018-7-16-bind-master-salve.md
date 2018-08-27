@@ -18,6 +18,7 @@ tags:
 
 - 方法一:传统的zone file
 - 方法二:web前端GloboDNS
+- 方式三:DLZ
 
 ## zone file
 
@@ -264,7 +265,13 @@ ruby script/importer --remote
 bundle exec unicorn_rails
 ```
 
+### DLZ
 
- # 相关资料
+Dynamically-Loadable Zones 是个第三方的插件。在Bind9的源码包中有所有的第三方插件。`DLZ的性能较差`。
 
- [GloboDNS](https://github.com/globocom/GloboDNS)
+
+具体安装参见[Bind-Web](https://github.com/1032231418/Bind-Web)
+
+# 相关资料
+
+[GloboDNS](https://github.com/globocom/GloboDNS)

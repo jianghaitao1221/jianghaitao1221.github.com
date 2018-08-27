@@ -46,7 +46,7 @@ bind内置了4个acl分别是:
 
 ```bsah
 acl aa {
-            172.16.0.0/16;
+            11.11.0.0/8;
             10.10.10.10;
 };
 ```
@@ -188,6 +188,49 @@ TTL(Time-To-Live/生存时间)，是一个域名解析记录在DNS服务 中的�
 dig +trace +nocmd +noall +answer +ttlid aaaa www.baidu.com #查询ttl值
 dig +noauthority +noquestion +nostats www.baidu.com        #查询剩余的ttl值
 ```
+
+### statistics
+
+```bash
+options
+{
+        ......
+        statistics-file "data/named_stats.txt";
+        zone-statistics yes;
+        ......
+};
+
+statistics-channels {
+        inet 10.1.10.10 port 8080 allow { 11.111.1.1; };
+        inet 127.0.0.1 port 8080 allow { 127.0.0.1; };
+};
+
+zone "example.com" {
+  type master;
+  file "/etc/bind/db.example.com";
+  zone-statistics yes;
+};
+
+```
+#### 查看
+
+##### 命令
+
+```bash
+rndc stats
+```
+##### http
+
+```bash
+curl http://bind:8080/xml
+curl http://bind:8080/json
+curl -j http://bind:8080/json 2>/dev/null | jq '.' | more
+curl -j http://bind:8080/json 2>/dev/null | jq '.rcodes'
+```
+
+##### 图像化工具
+
+[cacti 官网](https://www.cacti.net/)
 
 ## rndc-远程控制
 

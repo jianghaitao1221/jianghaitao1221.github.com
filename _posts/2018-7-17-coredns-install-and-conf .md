@@ -195,3 +195,9 @@ go install net
 
 [官网](https://coredns.io)
 
+[Dynamic updates API with listen server](https://github.com/coredns/coredns/pull/1822)
+
+[性能测试](https://coredns.io/2017/08/08/coredns-performance-testing/)
+
+
+
