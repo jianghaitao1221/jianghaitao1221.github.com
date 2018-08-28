@@ -30,18 +30,21 @@ tags:
 
 ### 分析
 
+**`代码片段中有相关的注释`**
+
 #### 启动流程
 
 ##### guardian模式
 
+
 如果启动参数中“–guardian=yes”，PowerDNS将启动guardian模式，即fork出一个子进程执行正常的启动流程，而父进程则一秒钟探测一次子进程是否活着，如果子进程非正常退出则重启动子进程。
+
 
 代码片段如下：
 
 ```c
 
- // "receiver.cc"
-
+// receiver.cc
 
 void daemonize(void)
 {
@@ -134,12 +137,14 @@ static int guardian(int argc, char **argv)
 
 根据`load-modules`给定的值，进行加载modules
 
+根据`launch`给定的值，进行加载modules
+
 代码片段如下：
 
 ```c
 //receiver.cc
 
-void daemonize(void)
+void main(void)
 {
     ......
     if(!::arg()["load-modules"].empty()) {
@@ -150,7 +155,8 @@ void daemonize(void)
         exit(1);
       }
     }
-    BackendMakers().launch(::arg()["launch"]); // vrooooom!
+    BackendMakers().launch(::arg()["launch"]);
+
     ......
 }
 ```
@@ -335,6 +341,10 @@ void *qthread(void *number)
 
 ### 查询流程
 
+先在PacketCache中查询。如果PacketCache中没有找到就去Backend。
+
+PacketCache是Backend响应的Cache。
+
 #### TCP查询
 
 ```c
@@ -380,6 +390,8 @@ void *TCPNameserver::doConnection(void *data)
 
         // we really need to ask the backend :-)
         
+        // doQuestion回去数据里查询，并将查询结果放入PacketCache
+
         reply=shared_ptr<DNSPacket>(s_P->doQuestion(packet.get())); 
       }
 
@@ -390,6 +402,24 @@ void *TCPNameserver::doConnection(void *data)
       sendPacket(reply, fd);
 
 }
+
+//packethandler.cc
+
+// 放入PacketCache
+
+DNSPacket *PacketHandler::doQuestion(DNSPacket *p)
+{
+    .........
+
+    r->wrapup(); // needed for inserting in cache
+
+    if(!noCache && p->couldBeCached())
+
+    PC.insert(p, r, r->getMinTTL()); // in the packet cache
+
+    .........
+}
+
 ```
 
 #### UDP查询
@@ -443,7 +473,13 @@ try
 
     try {
       
-      distributor->question(P, &sendout); // otherwise, give to the distributor
+      // 这个方法是DNSPacket *PacketHandler::question(DNSPacket *p)
+      
+      // question调用的是doQuestion，和Tcp查询中最终调用的方法一样
+
+      // sendout函数是返给客户端的响应。
+      
+      distributor->question(P, &sendout); 
 
     }
     catch(DistributorFatal& df) { // when this happens, we have leaked loads of memory. Bailing out time.
@@ -585,6 +621,7 @@ void CommunicatorClass::masterUpdateCheck(PacketHandler *P)
     queueNotifyDomain(di, B); //查询是否有通知，并放入队列
 
     di.backend->setNotified(di.id, di.serial); //将记录设置为已通知，set serial
+
   }
 }
 ```
