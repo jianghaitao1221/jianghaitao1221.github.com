@@ -74,7 +74,9 @@ static int guardian(int argc, char **argv)
 
             break;
             else { // child is alive
+           
             // execute some kind of ping here 
+
             if(DLQuitPlease())
                 takedown(1); // needs a parameter
     
@@ -183,10 +185,12 @@ void daemonize(void)
 
 ```c
 //receiver.cc
+
 void daemonize(void)
 {
     .....
     N=std::make_shared<UDPNameserver>(); // this fails when we are not root, throws exception
+
     g_udpReceivers.push_back(N);
 
     size_t rthreads = ::arg().asNum("receiver-threads", 1);
@@ -211,6 +215,7 @@ void daemonize(void)
 
 ```c
 //receiver.cc
+
 void daemonize(void)
 {
     .....
@@ -224,6 +229,7 @@ void daemonize(void)
 
 ```c
 //common_startup.cc
+
 void mainthread()
 {
     .....
@@ -239,6 +245,7 @@ void mainthread()
 
 ```c
 //common_startup.cc
+
 void mainthread()
 {
     .....
@@ -252,6 +259,7 @@ void mainthread()
 
 ```c
 //common_startup.cc
+
 void mainthread()
 {
     .....
@@ -264,6 +272,7 @@ void mainthread()
 
 ```c
 //common_startup.cc
+
 void mainthread()
 {
     .....
@@ -277,6 +286,7 @@ TCPNameServer会在接收数据包时创建工作线程。
 
 ```c
 //tcpreceiver.cc
+
 void TCPNameserver::thread()
 {
     .......
@@ -295,6 +305,7 @@ void TCPNameserver::thread()
 
 ```c
 //common_startup.cc
+
 void mainthread()
 {
     .....
@@ -310,6 +321,7 @@ void mainthread()
 
 ```c
 //common_startup.cc
+
 void *qthread(void *number)
 {
     .....
@@ -325,36 +337,48 @@ void *qthread(void *number)
 
 ```c
 //tcpreceiver.cc
+
 void *TCPNameserver::doConnection(void *data)
 {
     .....
     // 第一步：在PacketCache查询
+
     if(packet->couldBeCached() && PC.get(packet.get(), cached.get())) { // short circuit - does the PacketCache recognize this question?
+
         if(logDNSQueries)
           g_log<<"packetcache HIT"<<endl;
         cached->setRemote(&packet->d_remote);
+
         cached->d.id=packet->d.id;
+
         cached->d.rd=packet->d.rd; // copy in recursion desired bit 
-        cached->commitD(); // commit d to the packet                        inlined
+
+        cached->commitD(); // commit d to the packet  inlined
 
         sendPacket(cached, fd); // presigned, don't do it again
+
         continue;
       }
     .....
+
     // 第二步：backend中查询
+
       if(logDNSQueries)
           g_log<<"packetcache MISS"<<endl;  
       {
         Lock l(&s_plock);
         if(!s_P) {
           g_log<<Logger::Error<<"TCP server is without backend connections, launching"<<endl;
+
           s_P=new PacketHandler;
+
         }
 
         reply=shared_ptr<DNSPacket>(s_P->doQuestion(packet.get())); // we really need to ask the backend :-)
       }
 
       if(!reply)  // unable to write an answer?
+
         break;
 
       sendPacket(reply, fd);
@@ -372,31 +396,50 @@ try
 {
     ......
     // 第一步：查询PacketCache
+
         if((P->d.opcode != Opcode::Notify && P->d.opcode != Opcode::Update) && P->couldBeCached()) {
         bool haveSomething=PC.get(P, &cached); // does the PacketCache recognize this question?
         if (haveSomething) {
             if(logDNSQueries)
                 g_log<<"packetcache HIT"<<endl;
+
             cached.setRemote(&P->d_remote);  // inlined
-            cached.setSocket(P->getSocket());                               // inlined
+
+            cached.setSocket(P->getSocket()); // inlined
+
             cached.d_anyLocal = P->d_anyLocal;
+
             cached.setMaxReplyLen(P->getMaxReplyLen());
+
             cached.d.rd=P->d.rd; // copy in recursion desired bit
+
             cached.d.id=P->d.id;
-            cached.commitD(); // commit d to the packet                        inlined
-            NS->send(&cached); // answer it then                              inlined
+
+            cached.commitD(); // commit d to the packet inlined
+
+            NS->send(&cached); // answer it then inlined
+
             diff=P->d_dt.udiff();
+
             avg_latency=(int)(0.999*avg_latency+0.001*diff); // 'EWMA'
+
             continue;
         }
     }
+
     .......
+
     // 第二步：去backend中查询
+
     try {
+      
       distributor->question(P, &sendout); // otherwise, give to the distributor
+
     }
     catch(DistributorFatal& df) { // when this happens, we have leaked loads of memory. Bailing out time.
+
       _exit(1);
+
     }
     ......
 }
@@ -408,8 +451,10 @@ try
 UeberBackend是一个特殊的Backend。启动时被加载的backends向它注册，添加到一个vector中。UeberBackend按注册顺序依次调用其他backend的相应成员方法。
 
 #### 调用
-// ueberbackend.cc
+
 ```c
+// ueberbackend.cc
+
 // 第一步：UeberBackend的get回调d_handle.get(rr)
 bool UeberBackend::get(DNSZoneRecord &rr)
 {
@@ -424,9 +469,13 @@ bool UeberBackend::handle::get(DNSZoneRecord &r)
 {
   .......
   // 第二步：d_handle.get首先调用第一个backend的get方法
+
   while(d_hinterBackend && !(isMore=d_hinterBackend->get(r))) { // this backend out of answers
+
   // 第三步：不成功 调用下一个backend的lookup和get方法，直到返回成功或者遍历完所有backend
+
     if(i<parent->backends.size()) {
+
       DLOG(g_log<<"Backend #"<<i<<" of "<<parent->backends.size()
            <<" out of answers, taking next"<<endl);
       
@@ -458,15 +507,23 @@ bool UeberBackend::handle::get(DNSZoneRecord &r)
 
 ```c
 //communicator.cc
+
 void CommunicatorClass::mainloop(void)
 {
   try {
     .......
-    d_tickinterval=::arg().asNum("slave-cycle-interval");//每slave-cycle-interval检查一次
+
+    // 每slave-cycle-interval检查一次
+
+    d_tickinterval=::arg().asNum("slave-cycle-interval");
+
     .......
     for(;;) {
+
       slaveRefresh(&P); //包括创建对应的Slave的domain，do AXFR from master
+
       masterUpdateCheck(&P); //master检查master的domain是否有更新，包括通过api修改的更新
+
       tick=doNotifications(); //this processes any notification acknowledgements and actually send out our own notifications
       
       tick = min (tick, d_tickinterval);
@@ -487,8 +544,10 @@ void CommunicatorClass::mainloop(void)
         }
         else { 
           break; // something happened
+
         }
         // this gets executed at least once every second
+
         doNotifications();
       }
     }
@@ -500,10 +559,12 @@ void CommunicatorClass::mainloop(void)
 
 ```c
 //mastercommunicator.cc
+
 void CommunicatorClass::masterUpdateCheck(PacketHandler *P)
 {
   .......
-  B->getUpdatedMasters(&cmdomains); //查询所有的domain
+  // 查询所有的domain
+  B->getUpdatedMasters(&cmdomains); 
   ........
   
   for(auto& di : cmdomains) {
@@ -520,6 +581,7 @@ void CommunicatorClass::masterUpdateCheck(PacketHandler *P)
 
 ```c
 //packethandler.cc
+
 int PacketHandler::processNotify(DNSPacket *p)
 {
     ......
