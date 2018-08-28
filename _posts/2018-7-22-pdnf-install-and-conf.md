@@ -2,8 +2,8 @@
 
 layout:     post
 title:      "搭建DNS服务(八)"
-subtitle:   "PowerDNS的master/slave设置"
-date:       2018-7-23 09:00:00
+subtitle:   "PowerDNS的master/slave设置和web前端的搭建"
+date:       2018-7-24 09:00:00
 author:     "Jht"
 header-img: "img/powerdns-bg.jpg"
 catalog: true
@@ -28,32 +28,18 @@ tags:
 官方的描述是默认就支持，不需要额外的设置，native replication模式不会发送和响应更新通知。
 只要配置mysql或oracle的主从复制就可以了。
 
-为什么复制数据库就可以？和他的机制有关。详见()
+为什么复制数据库就可以？和他的机制有关。详见[powerdns内部机制分析](http://jianghaitao1221.github.io/2018/07/23/pdnf-design/)
 
 ## master/slave
 
+### 安装
 
-```bash
-sudo apt-get install mysql-server mysql-client
-```
+详见[]()
 
 ### 安装powerdns
 
 
 ```bash
-#Create the file '/etc/apt/sources.list.d/pdns.list' with this content:
-deb [arch=amd64] http://repo.powerdns.com/ubuntu xenial-auth-41 main
-#And this to '/etc/apt/preferences.d/pdns':
-Package: pdns-*
-Pin: origin repo.powerdns.com
-Pin-Priority: 600
-and execute the following commands:
-#运行
-curl https://repo.powerdns.com/FD380FBB-pub.asc | sudo apt-key add - &&
-sudo apt-get update &&
-sudo apt-get install pdns-server
-#安装mysql的backend
-sudo apt-get install pdns-backend-mysql #会提醒你是否初始化pdns的数据库
 ```
 
 ### 配置
