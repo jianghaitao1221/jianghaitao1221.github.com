@@ -39,7 +39,7 @@ tags:
 代码片段如下：
 
 ```c
-//receiver.cc
+**`// receiver.cc`**
 
 void daemonize(void)
 {
@@ -343,7 +343,9 @@ void *TCPNameserver::doConnection(void *data)
     .....
     // 第一步：在PacketCache查询
 
-    if(packet->couldBeCached() && PC.get(packet.get(), cached.get())) { // short circuit - does the PacketCache recognize this question?
+   // short circuit - does the PacketCache recognize this question?
+
+    if(packet->couldBeCached() && PC.get(packet.get(), cached.get())) {
 
         if(logDNSQueries)
           g_log<<"packetcache HIT"<<endl;
@@ -374,7 +376,9 @@ void *TCPNameserver::doConnection(void *data)
 
         }
 
-        reply=shared_ptr<DNSPacket>(s_P->doQuestion(packet.get())); // we really need to ask the backend :-)
+        // we really need to ask the backend :-)
+        
+        reply=shared_ptr<DNSPacket>(s_P->doQuestion(packet.get())); 
       }
 
       if(!reply)  // unable to write an answer?
@@ -398,7 +402,11 @@ try
     // 第一步：查询PacketCache
 
         if((P->d.opcode != Opcode::Notify && P->d.opcode != Opcode::Update) && P->couldBeCached()) {
-        bool haveSomething=PC.get(P, &cached); // does the PacketCache recognize this question?
+           
+        // does the PacketCache recognize this question?
+           
+        bool haveSomething=PC.get(P, &cached);
+
         if (haveSomething) {
             if(logDNSQueries)
                 g_log<<"packetcache HIT"<<endl;
@@ -564,13 +572,17 @@ void CommunicatorClass::masterUpdateCheck(PacketHandler *P)
 {
   .......
   // 查询所有的domain
+
   B->getUpdatedMasters(&cmdomains); 
   ........
   
   for(auto& di : cmdomains) {
+
     purgeAuthCachesExact(di.zone);
+
     queueNotifyDomain(di, B); //查询是否有通知，并放入队列
-    di.backend->setNotified(di.id, di.serial);//将记录设置为已通知，set serial
+
+    di.backend->setNotified(di.id, di.serial); //将记录设置为已通知，set serial
   }
 }
 ```
