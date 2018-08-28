@@ -40,8 +40,8 @@ tags:
 
 ```c
 
-<span style="color:red">// receiver.cc</span>
-\`// receiver.cc\`
+ // "receiver.cc"
+
 
 void daemonize(void)
 {
