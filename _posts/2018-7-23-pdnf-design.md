@@ -39,7 +39,7 @@ tags:
 代码片段如下：
 
 ```c
-**// receiver.cc
+*// receiver.cc
 
 void daemonize(void)
 {
