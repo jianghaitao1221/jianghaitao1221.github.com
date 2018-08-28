@@ -414,8 +414,7 @@ DNSPacket *PacketHandler::doQuestion(DNSPacket *p)
     r->wrapup(); // needed for inserting in cache
 
     if(!noCache && p->couldBeCached())
-
-    PC.insert(p, r, r->getMinTTL()); // in the packet cache
+      PC.insert(p, r, r->getMinTTL()); // in the packet cache
 
     .........
 }

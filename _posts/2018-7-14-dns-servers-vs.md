@@ -26,10 +26,14 @@ tags:
 
 ## Bind
 
-Bind一直以来基本上都是DNS的工业标准，1984年，加州大学伯克利分校的几个学生做的，名字叫做Berkeley Internet Name Domain（BIND）。
+Bind是1984年，加州大学伯克利分校的几个学生做的，名字叫做Berkeley Internet Name Domain（BIND）。
 Bind9是ISC开发人员对Bind重写。
-
+`Bind9是c语言开发的。`
 Bind9可以作为权威与递归DNS。
+
+### 语言
+
+c语言
 
 ### 权威DNS服务
 
@@ -102,6 +106,9 @@ bind安装目录下`contrib/queryperf`是性能测试模块，需编译安装。
 
 PownerDNS发起于1999年，2015成为了Open-Xchange的一部分，。它可以作为权威与递归DNS,很成熟，支持多种backend。有web前端。文档全面。应用最为广泛。
 
+`PowerDNS是c语言开发的。支持lua。`
+
+PowerDNS的产品：
 - PowerDNS-Authoritative 权威DNS服务
 - PowerDNS-Recursor 递归DNS服务
 - dnsdist 针对DoS攻击的动态DNS负载均衡器
@@ -206,6 +213,7 @@ CoreDNS 是一个从Caddy中Fork出来的项目（同时继承了它的链式中
 
 coredns被大家所熟知是因为从kubernetes1.9开始引入，作为kubernetes内部服务发现的默认dns。
 
+`CoreDNS是go语言开发的。`
 
 ### features
 
