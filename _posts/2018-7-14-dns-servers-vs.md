@@ -27,7 +27,7 @@ tags:
 ## Bind
 
 Bind一直以来基本上都是DNS的工业标准，1984年，加州大学伯克利分校的几个学生做的，名字叫做Berkeley Internet Name Domain（BIND）。
-Bind9是ISC开发人员对Bind重写，目前常见的Linux发行版本中，会自带Bind9的安装包。
+Bind9是ISC开发人员对Bind重写。
 
 Bind9可以作为权威与递归DNS。
 
@@ -35,23 +35,23 @@ Bind9可以作为权威与递归DNS。
 
 - RRL 减少放大攻击
 - DLZ 支持从外部数据库获取Zone数据，但不建议在high-query的环境中使用。
-- Minimum Re-load Time 支持配置文件动态加载。
-- HSM Support
-- DNSSEC with In-line Signing 支持NSEC与NSEC3的安全协议的签名。
-- Catalog Zones 支持多Zone的目录管理。
+- Minimum Re-load Time
+- HSM Support HSM加密
+- DNSSEC with In-line Signing
+- Catalog Zones zone的增加删除更加方便，在一个db file中定义等多个SOA
 - Scalable Master/Slave Hierarchy
 
 
 ### 递归DNS
 
-- NXDOMAIN Redirect 当查询一个不存在域名时，转向一个Web页面，它依赖于DLZ特征。
+- NXDOMAIN Redirect 当查询域名不存在时，转向一个Web页面，它依赖于DLZ特征。
 - Flexible Cache Controls 对于不正确或过期的域名记录，可以干掉他们。
-- Split DNS 通过配置View，来分离各自的DNS信息。
+- Split DNS 通过View和可见性隔离DNS信息。
 - Optimum Cache Hit Rate 通过 DNS prefetch ，来提高命中率。
-- Resolver rate-limiting 在受攻击时，对权威DNS查询限速，减轻对路径解析器的DDoS攻击影响。
-- DNSSEC Validation：支持对DNSSEC的检验。
-- GeoIP 支持基于来源不同的递归DNS的请求给出不同的响应。
-- RPZ
+- Resolver rate-limiting 在遭受攻击时，对权威DNS查询限速，减轻DDoS攻击影响。
+- DNSSEC Validation
+- GeoIP 根据查询者IP的地理位置给出不同的DNS结果
+- RPZ Response Policy Zones, DNS防火墙，重写一些域名响应，指向NXDOMAIN等。
 
 ### 性能
 
@@ -243,7 +243,7 @@ CoreDNS同样可以权威与递归DNS，因为他是链式的，所有的插件�
 
 其他的几个DNS服务器，不是很活跃，有的github好久都没更新了。就没仔细看了
 
-- dnspod-sr是中国最大域名解析服务商DNSPod官方于2012年6月1日开源的一款递归DNS服务器软件。
+- dnspod-sr是DNSPod官方开源的一款递归DNS服务器软件。比Bind9快一倍左右。
 - Dnsmasq 提供 DNS 缓存和 DHCP 服务功能。作为域名解析服务器(DNS)，，dnsmasq可以通过缓存 DNS 请求来提高对访问过的网址的连接速度。作为DHCP 服务器，dnsmasq 可以用于为局域网电脑分配内网ip地址和提供路由。DNS和DHCP两个功能可以同时或分别单独实现。dnsmasq轻量且易配置，适用于个人用户或少于50台主机的网络。
 - Atomia DNS是一个开源的、免费的，多租户DNS管理系统，易于使用，可靠，可扩展，通过编程接口处理大量的DNS数据。Atomia DNS还包含同步代理确保该数据命中所有的dns服务器。推荐PowerDNS和BIND-DLZ DNS服务器，PowerDNS是默认代理选项。
 
@@ -308,11 +308,7 @@ DNS集群服务，解决单点DNS服务故障。
 
 ### 安全
 
-网络层安全问题 : 网络层DOS、DDOS攻击，SYN Flooding攻击，UDP Flooding攻击，DNS request Flooding攻击、Man-In-Middle类型攻击等。
-
-协议层安全问题：缓存投毒攻击、DNS欺诈和劫持攻击、反射类攻击、反射放大类攻击、非正常DNS请求攻击等。
-
-系统层安全问题：基于DNS系统本身漏洞和安全隐患的攻击、缓存溢出类攻击、获取运行权限类攻击、最大查询限制攻击、区域传送限制攻击、动态更新限制攻击、递归攻击等。
+包括DNS Blacklist、DNSSEC、RRL（Response Rate Limiting），以及RPZ（Response Policy Zones）等。
 
 ### 规范化
 
@@ -340,11 +336,11 @@ name有的需求就用不上，比如智能化。
 
 ### 需求对比
 
-| DNS Server | 智能化               |可扩展 | 高可用 | 数据持久化               | 安全|规范化部署|规范化监控|规范化管理|
-| ---------- | ---------------------| ---- |------ |------------------------ |-----|-------- |-------- |-------- |
-| Bind       | 否                   | 是   | 是     |是(性能差)               | 是  |是        |是(指标少)|无API，第三方直接管理文件(部署复杂)|
-| PowerDNS   | 是                   | 是   |是      |是                       |是   |是       |是        |是       |
-| CoreDNS    | 是(仅支持round_robin)| 是    |是      |是(etcd，第三方的成熟度低)|是   |是       |是        |无(好像有人在开发) |
+| DNS Server | 智能化               |可扩展 | 高可用 | 数据持久化                   | 安全|规范化部署|规范化监控|规范化管理|
+| ---------- | ---------------------| ---- |------ |------------------------     |-----|-------- |-------- |-------- |
+| Bind       | 否                   | 是   |是      |是(性能差)                   |是   |是        |是(指标少)|无API，第三方的直接管理文件(部署复杂)|
+| PowerDNS   | 是                   | 是   |是      |是                          |是   |是       |是        |是       |
+| CoreDNS    | 是(仅支持round_robin)| 是    |是      |是(官方etcd，第三方的成熟度低)|是   |是       |是        |无(好像有人在开发) |
 
 
 ## 结论
