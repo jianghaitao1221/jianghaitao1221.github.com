@@ -1,9 +1,9 @@
 ---
 
 layout:     post
-title:      "搭建DNS服务(八)"
-subtitle:   "PowerDNS的master/slave设置和web前端的搭建"
-date:       2018-7-24 09:00:00
+title:      "搭建DNS服务(六)"
+subtitle:   "powerdns的安装和配置"
+date:       2018-7-22 09:00:00
 author:     "Jht"
 header-img: "img/powerdns-bg.jpg"
 catalog: true
@@ -13,33 +13,60 @@ tags:
 ---
 
 
-# PowerDNS支持的模式
+# powerdns
 
-- master/slave
-- native replication(数据库复制)
+PownerDNS发起于1999年，也是一个老牌的开源DNS了。它可以作为权威与递归DNS,很成熟，支持多种backend。有web前端。文档全面。
 
-## one database
+## 安装
 
-`假设我们的DNS服务器是一个私有DNS，或者不跨国家和区域，只服务与内部。`
-`而database又高可用，有高性能，那么两个native模式的DNS服务器连接一个数据库的也是可行的。`
+官方提供了各个平台的安装方法，本文用的是 ubuntu 16.04。
 
-## native replication
+其他的详见[installation](https://doc.powerdns.com/authoritative/installation.html)
 
-官方的描述是默认就支持，不需要额外的设置，native replication模式不会发送和响应更新通知。
-只要配置mysql或oracle的主从复制就可以了。
+### backebd
 
-为什么复制数据库就可以？和他的机制有关。详见[powerdns内部机制分析](http://jianghaitao1221.github.io/2018/07/23/pdnf-design/)
+- BIND
+- Generic Mysql
+- Generic ODBC
+- Generic Oracle
+- Generic Postgresql
+- Generic SQLite3
+- GeoIP
+- LDAP
+- Lua2
+- MyDNS
+- OpenDBX
+- Oracle
+- Pipe
+- Random
+- Remote
+- TinyDNS
 
-## master/slave
+powerdns支持很多的后端。具体支持到什么样子，详见[Backends](https://doc.powerdns.com/authoritative/backends/index.html)
 
-### 安装
+### 安装mysql
 
-详见[]()
+```bash
+sudo apt-get install mysql-server mysql-client
+```
 
 ### 安装powerdns
 
 
 ```bash
+#Create the file '/etc/apt/sources.list.d/pdns.list' with this content:
+deb [arch=amd64] http://repo.powerdns.com/ubuntu xenial-auth-41 main
+#And this to '/etc/apt/preferences.d/pdns':
+Package: pdns-*
+Pin: origin repo.powerdns.com
+Pin-Priority: 600
+and execute the following commands:
+#运行
+curl https://repo.powerdns.com/FD380FBB-pub.asc | sudo apt-key add - &&
+sudo apt-get update &&
+sudo apt-get install pdns-server
+#安装mysql的backend
+sudo apt-get install pdns-backend-mysql #会提醒你是否初始化pdns的数据库
 ```
 
 ### 配置
