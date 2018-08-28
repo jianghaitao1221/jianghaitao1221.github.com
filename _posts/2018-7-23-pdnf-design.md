@@ -51,6 +51,7 @@ void daemonize(void)
       }
       guardian(argc, argv);  
       # never get here, guardian will reinvoke process
+
       cerr<<"Um, we did get here!"<<endl;
     } 
     .......
@@ -70,11 +71,13 @@ static int guardian(int argc, char **argv)
             exit(1);
             }
             else if(ret) // something exited
+
             break;
             else { // child is alive
             // execute some kind of ping here 
             if(DLQuitPlease())
-                takedown(1); // needs a parameter..
+                takedown(1); // needs a parameter
+    
             setStatus("Child running on pid "+itoa(pid));
             sleep(1);
             }
