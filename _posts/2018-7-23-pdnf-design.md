@@ -39,7 +39,9 @@ tags:
 代码片段如下：
 
 ```c
-*// receiver.cc
+
+<span style="color:red">// receiver.cc</span>
+\`// receiver.cc\`
 
 void daemonize(void)
 {
