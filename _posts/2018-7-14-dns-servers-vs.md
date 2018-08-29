@@ -17,12 +17,12 @@ tags:
 
 - Bind
 - PowerDNS
-- CoredDNS
+- CoreDNS
 - DNSPod-SR
 - Dnsmasq
 - Atomia DNS
 
-我们主要介绍Bind，PowerDNS，CoredDNS，这三个成熟，活跃，在不断的修改或增加新的功能。
+我们主要介绍Bind，PowerDNS，CoreDNS，这三个成熟，活跃，在不断的修改或增加新的功能。
 
 ## Bind
 
