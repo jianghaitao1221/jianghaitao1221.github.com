@@ -102,16 +102,16 @@ reuseport=yes
 
 ## 优化结果
 
-因为我只对我的私有域名进行测试。对12个A记录进行轮流查询，总共发送1万5000次。是否开启优化差别不大。
+因为我只对我的私有域名进行测试。对12个A记录进行轮流查询，总共发送1万5000次。`每秒吞吐量44142`。开启线程优化差别不大。
 原因是因为就一开始的12个查库了，其余的查询都是在缓存中获取，这种情况下区别不是很大。
 
 可以理解如果只是作为私有DNS服务，可查询的记录不是很多的情况下，性能问题不是瓶颈。
 
 # 相关文档
 
-[authoritative]()
+[recursor metrics](https://doc.powerdns.com/recursor/metrics.html)
 
-[recursor]()
+[authoritative performance](https://doc.powerdns.com/authoritative/performance.html)
 
 [使用socket so_reuseport提高服务端性能](http://xiaorui.cc/2015/12/02/%E4%BD%BF%E7%94%A8socket-so_reuseport%E6%8F%90%E9%AB%98%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%80%A7%E8%83%BD/)
 
