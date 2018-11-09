@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "git branch"
-subtitle:   " \"保持fork出来的代码与被fork的代码一致\""
+subtitle:   " \"分支的相关操作\""
 date:       2018-11-07 00:00:00
 author:     "Jht"
 header-img: "img/post-bg-git.jpg"
