@@ -260,6 +260,8 @@ tags:
 ![](/img/in-post/analysis/method8.jpg)
 
 
+象限排序：第一象限 > 第二象限 > 第四象限 > 第三象限 
+
 ![](/img/in-post/analysis/method9.jpg)
 
 ## 参考资料
