@@ -177,3 +177,5 @@ Delta Lake 是一个存储层，为 Apache Spark 和大数据 workloads 提�
 [Beyond Datawarehouse – The Data Lake](http://www.giorgiogiussani.it/2017/11/08/beyond-datawarehouse-the-data-lake/)
 
 [MPP数据库](https://www.cnblogs.com/pejsidney/p/10364679.html)
+
+[AWS re:Invent 2018: Big Data Analytics Architectural Patterns & Best Practices (ANT201-R1)](https://www.youtube.com/watch?v=ovPheIbY7U8)
