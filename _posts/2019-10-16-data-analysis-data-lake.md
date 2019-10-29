@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "数据分析学习（九）"
-subtitle:   " \"云服务的影响---数据湖\""
+subtitle:   " \"数据湖\""
 date:       2019-10-16 10:00:00
 author:     "Jht"
 header-img: "img/post-bg-data-analysis.jpg"
