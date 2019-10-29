@@ -120,12 +120,12 @@ tags:
 
 #### 数据湖技术架构
 
-##### 云（aws）
+##### 云原生（aws）
 
 ![](/img/in-post/analysis/lake4.jpg)
 
 
-##### 非云
+##### 非云原生
 
 ![](/img/in-post/analysis/lake3.png)
 
