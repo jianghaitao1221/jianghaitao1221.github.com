@@ -18,7 +18,7 @@ tags:
 - Filebeat
 - Fluent-bit
 
-**优点**
+`优点`
 
 - 轻量级
 - 零依赖（Fluent-bit编译依赖）
@@ -26,7 +26,7 @@ tags:
   - 多种input
   - 多种output 
 
-**缺点**
+`缺点`
 
 轻量级的更多的专注采集，信息转换不是很擅长，一般都是由下游的服务（Logstash，Fluent等）来转换。
 
@@ -76,7 +76,7 @@ Fluent bit工作流程
 
 `Fluentd算是资源占用少的了40M左右。`
 
-**以上的收集工具都可以输入到Kafka**
+`以上的收集工具都可以输入到Kafka`
 
 引入Kafka 的优势
 - 可以异步处理数据，防止突发流量。
@@ -158,7 +158,7 @@ Flume是由cloudera软件公司产出的可分布式日志收集系统，后与2
 
 Flume使用JRuby来构建，所以依赖Java运行环境。
 
-**Flume的一些核心概念：**
+`Flume的一些核心概念：`
 
 - Client：Client生产数据，运行在一个独立的线程。
 - Event： 一个数据单元，消息头和消息体组成。（Events可以是日志记录、 avro 对象等。）
@@ -168,7 +168,7 @@ Flume使用JRuby来构建，所以依赖Java运行环境。
   - Channel： 中转Event的一个临时存储，保存由Source组件传递过来的Event。（Channel连接 sources 和 sinks ，这个有点像一个队列。）
   - Sink： 从Channel中读取并移除Event， 将Event传递到FlowPipeline中的下一个Agent（如果有的话）（Sink从Channel收集数据，运行在一个独立线程。）
 
-**Apache Flume主要有以下几大模块组成：**
+`Apache Flume主要有以下几大模块组成：`
 
 - 数据源采集（Source）
 - 数据拦截（Interceptor）
