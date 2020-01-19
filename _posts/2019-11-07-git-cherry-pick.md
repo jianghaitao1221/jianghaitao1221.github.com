@@ -20,13 +20,15 @@ tags:
 git fetch upstream release-0.2
 git checkout -b release-0.2 upstream/release-0.2
 git push origin release-0.2
+
+git checkout -b my-release-0.2
 ```
 
 #### 非fork的
 
 ```bash
 # 没有的话先创建分支
-git checkout release-0.2
+git checkout my-release-0.2
 ```
 
 ### cherry-pick
@@ -47,6 +49,12 @@ git cherry-pick <start-commit-id>^...<end-commit-id> # 包含start-commit-id
 git commit -c 
 git cherry-pick -x xxxxxx # xxxxxx为commit id
 git cherry-pick --continue
+```
+
+#### 提交
+
+```bash
+git push origin my-release-0.2
 ```
 
 ### 其他命令
