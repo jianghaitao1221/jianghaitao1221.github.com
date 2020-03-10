@@ -12,4 +12,6 @@ tags:
 
 ## Open Distro for Elasticsearch
 
+带的插件，已基本满足日常需求
+
 [官方文档](https://opendistro.github.io/for-elasticsearch-docs/)
