@@ -142,13 +142,18 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\SharedAccess\Parameters
 ##### bat脚本修改注册表
 
 ```bat
+
 @echo off
+
 set /p q=Pleasl input ShareIP [192.168.173.1]:
+
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters" -v ScopeAddress -d %q% -f
+
 
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters" -v ScopeAddressBackup -d %q% -f
 
 timeout /t 10 /nobreak
+
 ```
 以管理员身份运行 并输入要变成的IP
 
@@ -160,8 +165,6 @@ timeout /t 10 /nobreak
 ![第一步](http://jianghaitao1221.github.io/img/in-post/hyperv/hyperv-network-7.png)
 
 上一步点击确定后会弹出下面的对话框，会提示虚拟网卡的IP地址将被设置成172.26.39.1，这个就是前文提到的他是默认的共享网络IP地址，由于之前我本身就设置的172.26.39.1，所以此处点我们不再需要做任何修改
-
-![第一步](http://jianghaitao1221.github.io/img/in-post/hyperv/hyperv-network-9.png)
 
  点击“是”后，会短暂失去连接，重新使用Xshell等工具连接虚拟机，此时虚拟机已经可以连接外网
 
