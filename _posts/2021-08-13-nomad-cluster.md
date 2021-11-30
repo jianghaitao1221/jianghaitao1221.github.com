@@ -178,6 +178,39 @@ sudo systemctl enabled consul-client.service    #设置为开机自动启动
 sudo systemctl daemon-reload    #修改脚本后重新加载
 sudo systemctl start consul-client.service    #启动
 ```
+
+##### client 设置 consul 服务发现 DNS
+
+所有的 consul client 用 systemd-resolved 设置
+
+```bash
+# 第一步
+cd /etc/systemd/resolved.conf.d/
+sudo vi /etc/systemd/resolved.conf.d/consul.conf
+
+systemctl --version
+
+# systemd 245 and older
+[Resolve]
+DNS=127.0.0.1
+DNSSEC=false
+Domains=~consul
+# systemd 246 and newer
+[Resolve]
+DNS=127.0.0.1:8600
+DNSSEC=false
+Domains=~consul
+
+# 第二步
+sudo iptables --table nat --append OUTPUT --destination localhost --protocol udp --match udp --dport 53 --jump REDIRECT --to-ports 8600
+sudo iptables --table nat --append OUTPUT --destination localhost --protocol tcp --match tcp --dport 53 --jump REDIRECT --to-ports 8600
+# 第三步
+sudo systemctl restart systemd-resolved
+# 第四步 
+dig consul.service.consul
+```
+
+
 #### nomad集群
 
 首先选中一个虚拟机作为server，另外两个作为client。
