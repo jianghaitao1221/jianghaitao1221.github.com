@@ -25,6 +25,8 @@ Windows 每次重启 wsl2 的 IP 都会变化。如果在上面部署服务，�
 
 ### 修改 wsl2 默认 DNS
 
+修改虚拟网卡地址 [修改虚拟网卡IP地址](http://jianghaitao1221.github.io/2021/08/12/hyperv-network/#%E4%BF%AE%E6%94%B9%E8%99%9A%E6%8B%9F%E7%BD%91%E5%8D%A1ip%E5%9C%B0%E5%9D%80)
+
 ```bash
 # 修改 /etc/wsl.conf
 sudo vi /etc/wsl.conf
