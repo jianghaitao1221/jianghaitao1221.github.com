@@ -37,7 +37,11 @@ git pull origin dev
 2.第二种
 git branch --set-upstream-to=origin/test  test #origin/test 远程的test
 ```
+### 拉取远程分支并创建本地分支
 
+```
+git fetch origin dev:dev
+```
 ### 查看
 
 ```bash
